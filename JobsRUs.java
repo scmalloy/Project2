@@ -2,7 +2,12 @@ package com.skillstorm.project;
 
 import java.util.Scanner;
 
-public class JobsRUs {
+import com.skillstorm.beans.Field;
+import com.skillstorm.beans.Jobs;
+import com.skillstorm.beans.Location;
+import com.skillstorm.beans.PayRange;
+
+public class JobsRUs extends Jobs {
 	
 	static Scanner in = new Scanner(System.in);
 	
