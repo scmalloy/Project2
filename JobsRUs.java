@@ -50,6 +50,9 @@ public class JobsRUs extends Jobs {
 		System.out.println("\nPlease pick a user ID");
 		String id = in.nextLine();
 		
+		System.out.println("\nPlease pick a password");
+		String password = in.nextLine();
+		
 		System.out.println("\nPlease enter your name.");
 		String name = in.nextLine(); 
 		//System.out.println("\nWELCOME!: " + name );
