@@ -9,14 +9,34 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 public class CSVWriter {
 	private final String csvFile = "C:\\Users\\Users.csv";
 	private final String resume = "C:\\User\\Resume.txt";
-	private String username;
 	
-	public void writeResume() {
+	public void resume(Scanner in) {
+		
+		String resumeChoice;
+		do {
+		System.out.println("Do you need a resume? "
+						 + "/nA. Yes"
+						 + "/nB. No");
+		resumeChoice = in.nextLine();
+		} while (!resumeChoice.equalsIgnoreCase("A") && !resumeChoice.equalsIgnoreCase("B"));
+		
+		if (resumeChoice.equalsIgnoreCase("A")) {
+			writeResume(in);
+		} else {
+			
+		}
+	}
+	
+	public void writeResume(Scanner in) {
+		
 		File file = new File(resume);
+		
+		
 		
 	}
 	
@@ -29,7 +49,8 @@ public class CSVWriter {
 			line = br.readLine();
 			while ((line = br.readLine()) != null) {
 				String[] vals = line.split(" | ");
-				Account record = new Account(vals[0].trim(), vals[1].trim());
+				Account record = new Account(vals[0].trim(), vals[1].trim(), vals[2].trim(), 
+											vals[3].trim(), vals[4].trim());
 				account.add(record);
 			}
 		} catch (FileNotFoundException ex) {
@@ -46,20 +67,13 @@ public class CSVWriter {
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(file, true));
 				for(Account a : account) {
-					bw.write(a.getName() + "," + a.getPassword());
+					bw.write(a.getName() + "," + a.getUserID() + "," + a.getPassword()
+						   + "," + a.getEmail() + "," + a.getPhone());
 					bw.newLine();
 				}
 			} catch (IOException ex) {
 				ex.printStackTrace();
 			}
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
 	}
 }	
 
