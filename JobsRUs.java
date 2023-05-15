@@ -30,7 +30,7 @@ public class JobsRUs {
 			 signIn();
 			  
 			} else if (choice.equalsIgnoreCase("C")) {
-				// jobSelection(); <- Sarah's method 
+				jobSelection();
 				
 			} else if (choice.equalsIgnoreCase("D")) {
 				System.out.println("Have a great day! \nGoodbye");
@@ -101,6 +101,40 @@ public class JobsRUs {
 	public static void editor() {
 		// Purpose of this class if to be able to edit user info. honestly dont know if we want to include this function but im going to try to figure it out. 
 		
+	}
+	
+	public static void jobSelection() {
+	// To call to the 
+	// Field field = new Field();
+	// field.field();
+	Scanner in = new Scanner(System.in); 
+	String selectionType;
+	
+	do {
+		System.out.println("\n*********Job Selection*********");
+		System.out.println("Please choose how you would like to filter your job search: "
+				+ "\nA.) All jobs"
+				+ "\nB.) By pay range"
+				+ "\nC.) By location"
+				+ "\nD.) By job field");
+			selectionType = in.nextLine();
+		
+		System.out.println("\n*********************************{ processing........ }*********************************\n");
+	} while (!selectionType.equalsIgnoreCase("A") && !selectionType.equalsIgnoreCase("B") 
+			&& !selectionType.equalsIgnoreCase("C") && !selectionType.equalsIgnoreCase("D"));
+	
+	if (selectionType.equalsIgnoreCase("A")) {
+		Jobs job = new Jobs();
+		job.allJobs();
+	} else  if (selectionType.equalsIgnoreCase("B")) {
+		PayRange pay = new PayRange();
+		pay.payRange();
+	} else  if (selectionType.equalsIgnoreCase("C")) {
+		Location loc = new Location();
+		loc.location();
+	} else {
+		Field field = new Field();
+		field.field();
 	}
 	
 	}
