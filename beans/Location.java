@@ -8,19 +8,19 @@ public class Location extends Jobs{
 		
 		Scanner in = new Scanner(System.in); 
 		String location;
-		System.out.println("\n******************");
+		System.out.println("\n-------------------------------------------------------------------------------------------\n");
 		
 		
 		do {
 			System.out.println("Please choose your desired location: "
-					+ "\nA.) West"
-					+ "\nB.) Midwest"
-					+ "\nC.) Southwest"
-					+ "\nD.) Southeast"
-					+ "\nE.) Northeast");
+					+ "\nA. West"
+					+ "\nB. Midwest"
+					+ "\nC. Southwest"
+					+ "\nD. Southeast"
+					+ "\nE. Northeast");
 			location = in.nextLine();
 			
-			System.out.println("*****************************{ processing........ }*****************************\n");
+			System.out.println("---------------------------------{ processing........ }---------------------------------\n");
 		} while (!location.equalsIgnoreCase("A") && !location.equalsIgnoreCase("B") 
 				&& !location.equalsIgnoreCase("C") && !location.equalsIgnoreCase("D") && !location.equalsIgnoreCase("E"));
 		
@@ -38,7 +38,7 @@ public class Location extends Jobs{
 
 	}
 
-	public void west(Scanner in) {
+	public void west(Scanner in) { System.out.println("\n------------------------------------- West -------------------------------------\n");
 		supervisoryMechanicalEngineer();
 		automotiveSalesConsultant();
 		computerSupportTechnician();
@@ -46,7 +46,7 @@ public class Location extends Jobs{
 		
 	}
 	
-	public void midwest(Scanner in) {
+	public void midwest(Scanner in) {System.out.println("\n------------------------------------- Midwest -------------------------------------\n");
 		electricalEngineerEL();
 		usedTruckSalesRepresentative();
 		financialAnalyst();
@@ -54,14 +54,14 @@ public class Location extends Jobs{
 		
 	}
 
-	public void southwest(Scanner in) {
+	public void southwest(Scanner in) {System.out.println("\n------------------------------------- Southwest -------------------------------------\n");
 		depositSupportSpecialist();
 		communityHealthWorker();
 		physicalTherapist();
 	
 	}
 
-	public void southeast(Scanner in) {
+	public void southeast(Scanner in) {System.out.println("\n------------------------------------- Southeast -------------------------------------\n");
 		supervisoryMechanicalEngineer();
 		solarSalesRepresentative();
 		financeDirector();
@@ -69,7 +69,7 @@ public class Location extends Jobs{
 		
 	}
 
-	public void northeast(Scanner in) {
+	public void northeast(Scanner in) {System.out.println("\n------------------------------------- Northeast -------------------------------------\n");
 		nuclearEngineerML();
 		automotiveSalesConsultant();
 		financialComplianceManager();
