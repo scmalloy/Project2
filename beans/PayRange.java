@@ -8,17 +8,17 @@ public class PayRange extends Jobs{
 		
 		Scanner in = new Scanner(System.in); 
 		String payRange;
-		System.out.println("\n******************");
+		System.out.println("\n-------------------------------------------------------------------------------------------\n");
 		
 		do {
 			System.out.println("Please choose your desired pay range: "
-					+ "\nA.) $35,000 - $50,000"
-					+ "\nB.) $50,000 - $65,000"
-					+ "\nC.) $65,000 - $80,000"
-					+ "\nD.) $80,000 - $100,000"
-					+ "\nE.) $100,000+");
+					+ "\nA. $35,000 - $50,000"
+					+ "\nB. $50,000 - $65,000"
+					+ "\nC. $65,000 - $80,000"
+					+ "\nD. $80,000 - $100,000"
+					+ "\nE. $100,000+");
 			payRange = in.nextLine();
-			System.out.println("*****************************{ processing........ }*****************************\n");
+			System.out.println("---------------------------------{ processing........ }---------------------------------\n");
 		} while (!payRange.equalsIgnoreCase("A") && !payRange.equalsIgnoreCase("B") 
 				&& !payRange.equalsIgnoreCase("C") && !payRange.equalsIgnoreCase("D") && !payRange.equalsIgnoreCase("E"));
 		
@@ -35,7 +35,7 @@ public class PayRange extends Jobs{
 		}
 	}
 
-	private void jobListA(Scanner in) {
+	private void jobListA(Scanner in) { System.out.println("\n------------------------------------- $35,000 - $ 50,000 -------------------------------------\n");
 		automotiveSalesConsultant();
 		usedTruckSalesRepresentative();
 		depositSupportSpecialist();
@@ -43,33 +43,33 @@ public class PayRange extends Jobs{
 		clinicMedicalAssistant();
 	}
 	
-	private void jobListB(Scanner in) {
+	private void jobListB(Scanner in) { System.out.println("\n------------------------------------- $50,000 - $65,000 -------------------------------------\n");
 		electricalEngineerEL();
 		computerSupportTechnician();
 		desktopSupportTechnician();
 	}
 		
-	private void jobListC(Scanner in) {
+	private void jobListC(Scanner in) { System.out.println("\n------------------------------------- $65,000 - $80,000 -------------------------------------\n");
 		networkEngineer();
 		solarSalesRepresentative();
 		financialAnalyst();
 	}
 	
-	private void jobListD(Scanner in) {
+	private void jobListD(Scanner in) { System.out.println("\n------------------------------------- $80,000 - $100,000 -------------------------------------\n");
 		supervisoryMechanicalEngineer();
 		financeDirector();
 		physicalTherapist();
 		
 	}
 
-	private void jobListE(Scanner in) {
+	private void jobListE(Scanner in) { System.out.println("\n------------------------------------- $100,000+ -------------------------------------\n");
 		nuclearEngineerML();
 		financialComplianceManager();
 		generalSalesManager();
 		seniorSoftwareEngineer();
 		machineLearningEngineer();
 		psychiatricNursePractitioner();
-}
+	}
 
 
 }
