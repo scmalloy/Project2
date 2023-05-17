@@ -46,22 +46,33 @@ public class JobsRUs extends Jobs {
 	
 	public static void createAccount() {
 		
+		Account account = new Account();
+		ArrayList<Account> a = new ArrayList<>();
+		
 		System.out.println("Welcome lets create your account");
 		System.out.println("\nPlease pick a user ID");
 		String id = in.nextLine();
+		account.setUserID(id);
 		
 		System.out.println("\nPlease pick a password");
 		String password = in.nextLine();
-		
+		account.setPassword(password);
+
 		System.out.println("\nPlease enter your name.");
 		String name = in.nextLine(); 
+		account.setName(name);
 		//System.out.println("\nWELCOME!: " + name );
 		
 		System.out.println("\nPlease enter a valid email adress");
 		String email = in.nextLine();
+		account.setEmail(email);
 
 		System.out.println("\nPlease enter a Phone number" );
 		String phone = in.nextLine();
+		account.setPhone(phone);
+
+		a.add(new Account(name, id, email, phone, password));
+		CSVWriter.csvFileWriter(a, "User.csv");
 		
 		
 		//////////// INSERT CSV FUNCTIONS HERE ////////////////
