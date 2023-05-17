@@ -74,17 +74,26 @@ public class JobsRUs extends Jobs {
 		a.add(new Account(name, id, email, phone, password));
 		CSVWriter.csvFileWriter(a, "User.csv");
 		
-		
-		//////////// INSERT CSV FUNCTIONS HERE ////////////////
-		
 		System.out.println("\nDoes this info look correct?" + "\n----------------------------------");
 		System.out.println("\nUser ID: " + id + "\nName: " + name + "\nEmail: " + email + "\nPhone Number: " + phone + "\n\nPress Y for Yes and N for No"); // <- resume need to be added 
 		
 		String choice2 = in.nextLine();
 		
 		if (choice2.equalsIgnoreCase("Y")) {
+			System.out.println("Great!");
+			String resume;
+			do {
+				System.out.println("Do you need a resume?"
+								 + "A. Yes"
+								 + "B. Not Uploading Resume");
+				resume = in.nextLine();
+			}while (!resume.equalsIgnoreCase("A") && !resume.equalsIgnoreCase("B"));
 			
-		// working on some function for this part.  
+			if (resume.equalsIgnoreCase("A")) {
+					CSVWriter.writeResume(in);
+			} else if (resume.equalsIgnoreCase("B")) {
+				signIn();
+			}
 				
 		  } else if (choice2.equalsIgnoreCase("N")) {
 			  System.out.println("\nWhat would you like to change?" 
@@ -93,12 +102,9 @@ public class JobsRUs extends Jobs {
 						+ "\nC. Email" 
 						+ "\nD. Phone Number");
 			  
-			// CSV file thats holds all the user 
-		  	} 
-		/*
-		 * 
-		 */
+		  	}
 		}
+
 
 	public static void signIn() {
 		System.out.println("Welcome back! \nLets get you signed in");
