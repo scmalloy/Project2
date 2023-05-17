@@ -66,11 +66,15 @@ public class CSVWriter {
 		File file = new File(filePath);
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(file, true));
+			bw.write("Name,UserID,Email,Phone,Password,");
+			bw.newLine();
 				for(Account a : account) {
 					bw.write(a.getName() + "," + a.getUserID() + "," + a.getPassword()
-						   + "," + a.getEmail() + "," + a.getPhone());
+						   + "," + a.getEmail() + "," + a.getPhone() + "\n");
 					bw.newLine();
+					bw.close();
 				}
+				
 			} catch (IOException ex) {
 				ex.printStackTrace();
 			}
