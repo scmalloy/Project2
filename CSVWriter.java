@@ -15,20 +15,97 @@ public class CSVWriter {
 	private final String csvFile = "C:\\Users\\Users.csv";
 	private final String resume = "C:\\User\\Resume.txt";
 	
-	public void resume(Scanner in) {
+	public static void writeResume(Scanner in) {
 		
-		String resumeChoice;
-		do {
-		System.out.println("Do you need a resume? "
-						 + "/nA. Yes"
-						 + "/nB. No");
-		resumeChoice = in.nextLine();
-		} while (!resumeChoice.equalsIgnoreCase("A") && !resumeChoice.equalsIgnoreCase("B"));
-		
-		if (resumeChoice.equalsIgnoreCase("A")) {
-			writeResume(in);
-		} else {
+		File file = new File("Resume.txt");
+		try {
+			BufferedWriter bw = new BufferedWriter(new FileWriter(file));
+			System.out.println("Welcome to the Resume Builder."
+							 + "\nWe just need a little information from you.\n");
+			String name;
+			System.out.println("Please type your name: ");
+			name = in.nextLine();
+			bw.write(name + "'s Resume"
+				   + "\n-----------------------------------------------------------------\n");
+			String field;
+			do {	
+				System.out.println("What is your Job Field?"
+							 + "\nA. Engineering"
+							 + "\nB. Sales"
+							 + "\nC. Finance"
+							 + "\nD. Computer and Information Technology"
+							 + "\nE. Healthcare");
+				field = in.nextLine();
+			} while (!field.equalsIgnoreCase("A") && !field.equalsIgnoreCase("B") && !field.equalsIgnoreCase("C")
+					&& !field.equalsIgnoreCase("D") && !field.equalsIgnoreCase("E"));
 			
+			if (field.equalsIgnoreCase("A")) {
+				bw.write("Career Field: Engineering");
+			} else if (field.equalsIgnoreCase("B")) {
+				bw.write("Career Field: Sales");
+			} else if (field.equalsIgnoreCase("C")) {
+				bw.write("Career Field: Finance");
+			} else if (field.equalsIgnoreCase("D")) {
+				bw.write("Career Field: Computer and Information Technology");
+			} else {
+				bw.write("Career Field: Healthcare");
+			}
+			
+			bw.write("\n-----------------------------------------------------------------\n");
+			
+			String location;
+			do {	
+				System.out.println("Where are you located?"
+								 + "\nA. West"
+								 + "\nB. Midwest"
+								 + "\nC. Southwest"
+								 + "\nD. Southeast"
+								 + "\nE. Northeast");
+				location = in.nextLine();
+			} while (!location.equalsIgnoreCase("A") && !location.equalsIgnoreCase("B") && !location.equalsIgnoreCase("C")
+					&& !location.equalsIgnoreCase("D") && !location.equalsIgnoreCase("E"));
+			
+			if (location.equalsIgnoreCase("A")) {
+				bw.write("Location: West");
+			} else if (location.equalsIgnoreCase("B")) {
+				bw.write("Location: Midwest");
+			} else if (location.equalsIgnoreCase("C")) {
+				bw.write("Location: Southwest");
+			} else if (location.equalsIgnoreCase("D")) {
+				bw.write("Location: Southeast");
+			} else {
+				bw.write("Location: Northeast");
+			}
+			
+			bw.write("\n-----------------------------------------------------------------\n");
+			
+			String payrange;
+			do {	
+				System.out.println("What is your desired Job Field?"
+								 + "\nA. $35,000 - $50,000"
+								 + "\nB. $50,000 - $65,000"
+								 + "\nC. $65,000 - $80,000"
+								 + "\nD. $80,000 - $100,000"
+								 + "\nE. $100,000+");
+				payrange = in.nextLine();
+			} while (!payrange.equalsIgnoreCase("A") && !payrange.equalsIgnoreCase("B") && !payrange.equalsIgnoreCase("C")
+					&& !payrange.equalsIgnoreCase("D") && !payrange.equalsIgnoreCase("E"));
+			
+			if (payrange.equalsIgnoreCase("A")) {
+				bw.write("Pay Range: $35,000 - $50,000");
+			} else if (payrange.equalsIgnoreCase("B")) {
+				bw.write("Pay Range: $50,000 - $65,000");
+			} else if (payrange.equalsIgnoreCase("C")) {
+				bw.write("Pay Range: $65,000 - $80,000");
+			} else if (payrange.equalsIgnoreCase("D")) {
+				bw.write("Pay Range:  $80,000 - $100,000");
+			} else {
+				bw.write("Pay Range: $100,000+");
+			}
+			bw.close();
+		} catch (IOException e) {
+			System.out.println("Sorry This is unavailable. Please Try Again.");
+			writeResume(in);
 		}
 	}
 	
