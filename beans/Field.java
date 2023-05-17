@@ -35,21 +35,14 @@ public class Field extends Jobs {
 			healthcare(in);
 		} 
 	}
-
-	// Once they choose a field, should i have another dowhile/ if else statement for them to choose that specific job and if so, what would it print out?
-		// Other than "congratulations, you have now applied to "job title"
+	
 
 	public void engineering(Scanner in) {
-		// Engineering jobs: civil engineer, mechanical engineer, biomedical engineer, chemical engineer
-//		supervisoryMechanicalEngineer();
-//		networkEngineer();
-//		networkEngineer();
-//		nuclearEngineerML();
 		String eng;
 		do {
 			System.out.println("\n------------------------------------- Engineering -------------------------------------\n"
 				+ "\nPlease choose A, B, C, or D for the Engineering job you would like to apply to: "
-				+ "\nA. "); supervisoryMechanicalEngineer();
+				+ "\n\nA. "); supervisoryMechanicalEngineer();
 				System.out.println("B. "); networkEngineer();
 				System.out.println("C. "); electricalEngineerEL();
 				System.out.println("D. "); nuclearEngineerML();
@@ -69,12 +62,13 @@ public class Field extends Jobs {
 		}
 	}
 	
+	
 	public void sales(Scanner in) {
 		String sales;
 		do {
 			System.out.println("\n------------------------------------- Sales -------------------------------------\n"
 				+ "\nPlease choose A, B, C, or D the Sales job you would like to apply to: "
-				+ "\nA. "); automotiveSalesConsultant();
+				+ "\n\nA. "); automotiveSalesConsultant();
 				System.out.println("B. "); generalSalesManager();
 				System.out.println("C. "); usedTruckSalesRepresentative();
 				System.out.println("D. "); solarSalesRepresentative();
@@ -94,12 +88,13 @@ public class Field extends Jobs {
 		}
 	}
 	
+	
 	public void finance(Scanner in) {
 		String fin;
 		do {
 			System.out.println("\n------------------------------------- Finance -------------------------------------\n"
 				+ "\nPlease choose A, B, C, or D the Finance job you would like to apply to: "
-				+ "\nA. "); financeDirector();
+				+ "\n\nA. "); financeDirector();
 				System.out.println("B. "); financialAnalyst();
 				System.out.println("C. "); financialComplianceManager();
 				System.out.println("D. "); depositSupportSpecialist();
@@ -117,15 +112,15 @@ public class Field extends Jobs {
 		} else {
 			System.out.println("Congratulations you have officially applied for the Deposit Support Specialist role!");
 		}
-		
 	}
+	
 	
 	public void computerIT(Scanner in) {
 		String compIT;
 		do {
 			System.out.println("\n------------------------------------- Computer and Information Technology -------------------------------------\n"
 				+ "\nPlease choose A, B, C, or D the Computer and Information Technology job you would like to apply to: "
-				+ "\nA. "); seniorSoftwareEngineer();
+				+ "\n\nA. "); seniorSoftwareEngineer();
 				System.out.println("B. "); computerSupportTechnician();
 				System.out.println("C. "); machineLearningEngineer();
 				System.out.println("D. "); desktopSupportTechnician();
@@ -145,12 +140,13 @@ public class Field extends Jobs {
 		}
 	}
 	
+	
 	public void healthcare(Scanner in) {
 		String health;
 		do {
 			System.out.println("\n------------------------------------- Healthcare -------------------------------------\n"
 				+ "\nPlease choose A, B, C, or D the Healthcare job you would like to apply to: "
-				+ "\nA. "); communityHealthWorker();
+				+ "\n\nA. "); communityHealthWorker();
 				System.out.println("B. "); clinicMedicalAssistant();
 				System.out.println("C. "); physicalTherapist();
 				System.out.println("D. "); psychiatricNursePractitioner();
