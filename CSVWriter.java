@@ -1,22 +1,16 @@
 package com.skillstorm.project;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class CSVWriter {
-	private final String csvFile = "C:\\Users\\Users.csv";
-	
+public class CSVWriter extends JobsRUs {
+
 	public static void writeResume(Scanner in) {
-		
-		File file = new File("Resume.txt");
+		File   file          = new File("C:\\User\\" + account.getName() + ".txt");
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(file));
 			System.out.println("Welcome to the Resume Builder."
@@ -28,12 +22,12 @@ public class CSVWriter {
 				   + "\n-----------------------------------------------------------------\n");
 			String field;
 			do {	
-				System.out.println("What is your Job Field?"
+				System.out.println("\nWhat is your Job Field?"
 							 + "\nA. Engineering"
 							 + "\nB. Sales"
 							 + "\nC. Finance"
 							 + "\nD. Computer and Information Technology"
-							 + "\nE. Healthcare");
+							 + "\nE. Healthcare\n");
 				field = in.nextLine();
 			} while (!field.equalsIgnoreCase("A") && !field.equalsIgnoreCase("B") && !field.equalsIgnoreCase("C")
 					&& !field.equalsIgnoreCase("D") && !field.equalsIgnoreCase("E"));
@@ -59,12 +53,12 @@ public class CSVWriter {
 			
 			String location;
 			do {	
-				System.out.println("Where are you located?"
+				System.out.println("\nWhere are you located?"
 								 + "\nA. West"
 								 + "\nB. Midwest"
 								 + "\nC. Southwest"
 								 + "\nD. Southeast"
-								 + "\nE. Northeast");
+								 + "\nE. Northeast\n");
 				location = in.nextLine();
 			} while (!location.equalsIgnoreCase("A") && !location.equalsIgnoreCase("B") && !location.equalsIgnoreCase("C")
 					&& !location.equalsIgnoreCase("D") && !location.equalsIgnoreCase("E"));
@@ -90,12 +84,12 @@ public class CSVWriter {
 			
 			String payrange;
 			do {	
-				System.out.println("What is your desired Job Field?"
+				System.out.println("\nWhat is your desired Job Field?"
 								 + "\nA. $35,000 - $50,000"
 								 + "\nB. $50,000 - $65,000"
 								 + "\nC. $65,000 - $80,000"
 								 + "\nD. $80,000 - $100,000"
-								 + "\nE. $100,000+");
+								 + "\nE. $100,000+\n");
 				payrange = in.nextLine();
 			} while (!payrange.equalsIgnoreCase("A") && !payrange.equalsIgnoreCase("B") && !payrange.equalsIgnoreCase("C")
 					&& !payrange.equalsIgnoreCase("D") && !payrange.equalsIgnoreCase("E"));
@@ -117,14 +111,14 @@ public class CSVWriter {
 				bw.write("Pay Range: $100,000+");
 			}
 			
-			System.out.println("Name: " + name
+			System.out.println("\nName: " + name
 					+ "\nJob Field: " + field
 					+ "\nLocation: " + location
 					+ "\nPay Range: " + payrange);
 			String check;
 			do {
-				System.out.println("Is that correct? "
-						  		 + "\nPlease enter Y/N: ");
+				System.out.println("\nIs that correct? "
+						  		 + "\nPlease enter Y/N: \n");
 				check = in.nextLine();
 			} while (!check.equalsIgnoreCase("Y") && !check.equalsIgnoreCase("N"));
 			
@@ -143,34 +137,10 @@ public class CSVWriter {
 		
 	}
 	
-	public List<Account> csvFileReader() {
-		
-		List<Account> account = new LinkedList<>();
-		try {
-			BufferedReader br = new BufferedReader(new FileReader(csvFile));
-			String line;
-			line = br.readLine();
-			while ((line = br.readLine()) != null) {
-				String[] vals = line.split(" | ");
-				Account record = new Account(vals[0].trim(), vals[1].trim(), vals[2].trim(), 
-											vals[3].trim(), vals[4].trim());
-				account.add(record);
-			}
-		} catch (FileNotFoundException ex) {
-			ex.printStackTrace();
-		} catch (IOException ex) {
-			ex.printStackTrace();
-		}
-		
-		return account;
-	}
-	
 	public static void csvFileWriter(List<Account> account, String filePath) {
 		File file = new File(filePath);
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(file, true));
-			bw.write("Name,UserID,Email,Phone,Password,");
-			bw.newLine();
 				for(Account a : account) {
 					bw.write(a.getName() + "," + a.getUserID() + "," + a.getPassword()
 						   + "," + a.getEmail() + "," + a.getPhone() + "\n");
