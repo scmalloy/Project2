@@ -13,7 +13,6 @@ import java.util.Scanner;
 
 public class CSVWriter {
 	private final String csvFile = "C:\\Users\\Users.csv";
-	private final String resume = "C:\\User\\Resume.txt";
 	
 	public static void writeResume(Scanner in) {
 		
@@ -23,7 +22,7 @@ public class CSVWriter {
 			System.out.println("Welcome to the Resume Builder."
 							 + "\nWe just need a little information from you.\n");
 			String name;
-			System.out.println("Please type your name: ");
+			System.out.println("Please type your full name: ");
 			name = in.nextLine();
 			bw.write(name + "'s Resume"
 				   + "\n-----------------------------------------------------------------\n");
@@ -40,14 +39,19 @@ public class CSVWriter {
 					&& !field.equalsIgnoreCase("D") && !field.equalsIgnoreCase("E"));
 			
 			if (field.equalsIgnoreCase("A")) {
+				field = "Engineering";
 				bw.write("Career Field: Engineering");
 			} else if (field.equalsIgnoreCase("B")) {
+				field = "Sales";
 				bw.write("Career Field: Sales");
 			} else if (field.equalsIgnoreCase("C")) {
+				field = "Finance";
 				bw.write("Career Field: Finance");
 			} else if (field.equalsIgnoreCase("D")) {
+				field = "Computer and Information Technology";
 				bw.write("Career Field: Computer and Information Technology");
 			} else {
+				field = "Healthcare";
 				bw.write("Career Field: Healthcare");
 			}
 			
@@ -66,14 +70,19 @@ public class CSVWriter {
 					&& !location.equalsIgnoreCase("D") && !location.equalsIgnoreCase("E"));
 			
 			if (location.equalsIgnoreCase("A")) {
+				location = "West";
 				bw.write("Location: West");
 			} else if (location.equalsIgnoreCase("B")) {
+				location = "Midwest";
 				bw.write("Location: Midwest");
 			} else if (location.equalsIgnoreCase("C")) {
+				location = "Southwest";
 				bw.write("Location: Southwest");
 			} else if (location.equalsIgnoreCase("D")) {
+				location = "Southeast";
 				bw.write("Location: Southeast");
 			} else {
+				location = "Northeast";
 				bw.write("Location: Northeast");
 			}
 			
@@ -92,28 +101,45 @@ public class CSVWriter {
 					&& !payrange.equalsIgnoreCase("D") && !payrange.equalsIgnoreCase("E"));
 			
 			if (payrange.equalsIgnoreCase("A")) {
+				payrange = "$35,000 - $50,000";
 				bw.write("Pay Range: $35,000 - $50,000");
 			} else if (payrange.equalsIgnoreCase("B")) {
+				payrange = "$50,000 - $65,000";
 				bw.write("Pay Range: $50,000 - $65,000");
 			} else if (payrange.equalsIgnoreCase("C")) {
+				payrange = "$65,000 - $80,000";
 				bw.write("Pay Range: $65,000 - $80,000");
 			} else if (payrange.equalsIgnoreCase("D")) {
+				payrange = "$80,000 - $100,000";
 				bw.write("Pay Range:  $80,000 - $100,000");
 			} else {
+				payrange = "$100,000+";
 				bw.write("Pay Range: $100,000+");
 			}
+			
+			System.out.println("Name: " + name
+					+ "\nJob Field: " + field
+					+ "\nLocation: " + location
+					+ "\nPay Range: " + payrange);
+			String check;
+			do {
+				System.out.println("Is that correct? "
+						  		 + "\nPlease enter Y/N: ");
+				check = in.nextLine();
+			} while (!check.equalsIgnoreCase("Y") && !check.equalsIgnoreCase("N"));
+			
+			if (check.equalsIgnoreCase("Y")) {
+				System.out.println("Thank you! Your resume has been created.");
+			} else {
+				System.out.println("Please Remake Resume.");
+				writeResume(in);
+			}
+			
 			bw.close();
 		} catch (IOException e) {
-			System.out.println("Sorry This is unavailable. Please Try Again.");
+			System.out.println("Something went wrong. Please Try Again.");
 			writeResume(in);
 		}
-	}
-	
-	public void writeResume(Scanner in) {
-		
-		File file = new File(resume);
-		
-		
 		
 	}
 	
@@ -151,10 +177,8 @@ public class CSVWriter {
 					bw.newLine();
 					bw.close();
 				}
-				
 			} catch (IOException ex) {
 				ex.printStackTrace();
 			}
 	}
 }	
-
