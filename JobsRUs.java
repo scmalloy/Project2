@@ -10,45 +10,65 @@ import com.skillstorm.beans.PayRange;
 
 public class JobsRUs extends Jobs {
 	
-	static Scanner in = new Scanner(System.in);
-	
+	static ArrayList<Account> a = new ArrayList<>();
+	static Account account = new Account();
+
 	public static void main(String[] args) {
 		
-		System.out.println("Welcome to Jobs R Us where we can find you a jobs with no problems!");
-		 System.out.println("Job Application Management Program" + "\n----------------------------------" );
+		Scanner in = new Scanner(System.in);
 		
-		 String choice; 
-		 
-		do { System.out.println( "\nA. Create Account" 
-	        						+ "\nB. Sign In" 
-	        						+ "\nC. View Jobs" 
-	        						+ "\nD. Quit");
+		System.out.println("Welcome to Jobs R Us where we can find you a job with no problems!");
+		System.out.println("Job Application Management Program" + "\n----------------------------------" );
+		
+		initialMenu(in);
+		
+		
+	}
+	public static void initialMenu(Scanner in) {
+		String choice;  
+		do { System.out.println("\nA. Create Account" 
+	        				  + "\nB. Sign In" 
+	        				  + "\nC. View Jobs" 
+	        				  + "\nD. Quit");
 		
 		choice = in.nextLine();
-		
-	//////// might change to a switch case ///////// 
-		 } while (!(choice.equalsIgnoreCase("A") || choice.equalsIgnoreCase("B") || choice.equalsIgnoreCase("C") || choice.equalsIgnoreCase("D") ));
+		} while (!choice.equalsIgnoreCase("A") && !choice.equalsIgnoreCase("B") && 
+				 !choice.equalsIgnoreCase("C") && !choice.equalsIgnoreCase("D"));
 		
 		if (choice.equalsIgnoreCase("A")) {
-			createAccount();
+			createAccount(in);
 				
-		  } else if (choice.equalsIgnoreCase("B")) {
-			 signIn();
+		} else if (choice.equalsIgnoreCase("B")) {
+			 signIn(in);
 			  
-			} else if (choice.equalsIgnoreCase("C")) {
-				jobSelection();
+		} else if (choice.equalsIgnoreCase("C")) {
+			jobSelection(in);
 				
-			} else if (choice.equalsIgnoreCase("D")) {
-				System.out.println("Have a great day! \nGoodbye");
-				
-			}	
+		} else {
+			System.out.println("Have a great day! \nGoodbye");
+		}	
 	}
 	
-	
-	public static void createAccount() {
+	public static void menu(Scanner in) {
+		String choice;  
+		do { System.out.println("\nA. View Jobs" 
+	        				  + "\nB. Create Resume" 
+	        				  + "\nC. Quit");
 		
-		Account account = new Account();
-		ArrayList<Account> a = new ArrayList<>();
+		choice = in.nextLine();
+		} while (!choice.equalsIgnoreCase("A") && !choice.equalsIgnoreCase("B") && 
+				 !choice.equalsIgnoreCase("C"));
+		
+		if (choice.equalsIgnoreCase("A")) {
+			jobSelection(in);	
+		} else if (choice.equalsIgnoreCase("B")) {
+			CSVWriter.writeResume(in);
+		} else {
+			System.out.println("Have a great day! \nGoodbye");
+		}	
+	}
+	
+	public static void createAccount(Scanner in) {
 		
 		System.out.println("Welcome lets create your account");
 		System.out.println("\nPlease pick a user ID");
@@ -75,65 +95,111 @@ public class JobsRUs extends Jobs {
 		a.add(new Account(name, id, email, phone, password));
 		CSVWriter.csvFileWriter(a, "User.csv");
 		
-		System.out.println("\nDoes this info look correct?" + "\n----------------------------------");
-		System.out.println("\nUser ID: " + id + "\nName: " + name + "\nEmail: " + email + "\nPhone Number: " + phone + "\n\nPress Y for Yes and N for No"); // <- resume need to be added 
-		
-		String choice2 = in.nextLine();
-		
-		if (choice2.equalsIgnoreCase("Y")) {
-			System.out.println("Great!");
-			String resume;
-			do {
-				System.out.println("Do you need a resume?"
-								 + "A. Yes"
-								 + "B. Not Uploading Resume");
-				resume = in.nextLine();
-			}while (!resume.equalsIgnoreCase("A") && !resume.equalsIgnoreCase("B"));
-			
-			if (resume.equalsIgnoreCase("A")) {
-					CSVWriter.writeResume(in);
-			} else if (resume.equalsIgnoreCase("B")) {
-				signIn();
+		String choice;
+		do {
+			System.out.println("\nDoes this info look correct?" + "\n----------------------------------");
+			System.out.println("\nUser ID: " + account.getUserID() 
+							 + "\nName: " + account.getName() 
+							 + "\nEmail: " + account.getEmail() 
+							 + "\nPhone Number: " + account.getPhone() 
+							 + "\n\nPress Y for Yes and N for No");
+			choice = in.nextLine();
+		} while (!choice.equalsIgnoreCase("Y") && !choice.equalsIgnoreCase("N"));
+			if(choice.equalsIgnoreCase("Y")) {
+				menu(in);
+			} else {
+				editor(in);
 			}
-				
-		  } else if (choice2.equalsIgnoreCase("N")) {
-			  System.out.println("\nWhat would you like to change?" 
-					  + "\nA. User ID" 
-						+ "\nB. Name" 
-						+ "\nC. Email" 
-						+ "\nD. Phone Number");
-			  
-		  	}
-		}
+	}
 
-
-	public static void signIn() {
-		System.out.println("Welcome back! \nLets get you signed in");
+	public static void signIn(Scanner in) {
+		
+		System.out.println("Welcome back! \nLets get you signed in!");
+	
 		System.out.println("\nPlease enter your User ID: ");
 		String id = in.nextLine();
-		System.out.println("\nPlease enter Password: ");
-		String password = in.nextLine();
+		if (id.equals(account.getUserID())) {
+			System.out.println("\nPlease enter Password: ");
+			String password = in.nextLine();
+			if (password.equals(account.getPassword())) {
+				menu(in);
+			} else {
+				System.out.println("Sorry your password was incorrect."
+						 		 + "\nPlease try again.");
+				signIn(in);
+			}
+		} else {
+			System.out.println("We could not find your account.");
+			String sign;
+			do {
+				System.out.println("Try again or create an account."
+								 + "A. Try Again"
+								 + "B. Create Account");
+				sign = in.nextLine();
+			} while(!sign.equalsIgnoreCase("A") && !sign.equalsIgnoreCase("B"));
+			if (sign.equalsIgnoreCase("A")) {
+				signIn(in);
+			} else {
+				createAccount(in);
+			}
+		}
+	}
+	
+	public static void editor(Scanner in) {
 		
-		/* if ( If they enter the wrong user name and password combo) {
-			System.out.println("Sorry we can't find that account please create a account");
-			createAccount();
+		String edit;
+		do {
+			System.out.println("\nWhat would you like to change?" 
+							 + "\nA. User ID" 
+							 + "\nB. Name" 
+							 + "\nC. Email" 
+							 + "\nD. Phone Number"
+							 + "\nE. No Change Needed");
+			edit = in.nextLine();
+		} while (!edit.equalsIgnoreCase("A") && !edit.equalsIgnoreCase("B") && 
+				 !edit.equalsIgnoreCase("C") && !edit.equalsIgnoreCase("D") && 
+				 !edit.equalsIgnoreCase("E"));
+		
+		if (edit.equalsIgnoreCase("A")) {
+			System.out.println("Please Re-enter User ID: ");
+			String id = in.nextLine();
+			account.setUserID(id);
+			
+		} else if (edit.equalsIgnoreCase("B")) {
+			System.out.println("Please Re-enter Name: ");
+			String name = in.nextLine();
+			account.setName(name);
+			
+		} else if (edit.equalsIgnoreCase("C")) {
+			System.out.println("Please Re-enter Email: ");
+			String email = in.nextLine();
+			account.setEmail(email);
+			
+		} else if (edit.equalsIgnoreCase("D")) {
+			System.out.println("Please Re-enter Phone Number: ");
+			String phone = in.nextLine();
+			account.setPhone(phone);
+			
+		} else {
+			String choice;
+			do {
+				System.out.println("\nDoes this info look correct?" + "\n----------------------------------");
+				System.out.println("\nUser ID: " + account.getUserID() 
+								 + "\nName: " + account.getName() 
+								 + "\nEmail: " + account.getEmail() 
+								 + "\nPhone Number: " + account.getPhone() 
+								 + "\n\nPress Y for Yes and N for No");
+				choice = in.nextLine();
+			} while (!choice.equalsIgnoreCase("Y") && !choice.equalsIgnoreCase("N"));
+				if(choice.equalsIgnoreCase("Y")) {
 				
-		  } else if (if it the correct combo prints out a welcome message and goes back to the select menu) {
-			 signIn();
-			  
-			} */
+				} else {
+					editor(in);
+				}
+		}
 	}
 	
-	public static void editor() {
-		// Purpose of this class if to be able to edit user info. honestly dont know if we want to include this function but im going to try to figure it out. 
-		
-	}
-	
-	public static void jobSelection() {
-		// To call to the 
-		// Field field = new Field();
-		// field.field();
-		Scanner in = new Scanner(System.in); 
+	public static void jobSelection(Scanner in) {
 		String selectionType;
 	
 		do {
