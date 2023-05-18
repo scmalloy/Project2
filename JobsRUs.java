@@ -79,7 +79,7 @@ public class JobsRUs extends Jobs {
 		account.setName(name);
 		//System.out.println("\nWELCOME!: " + name );
 		
-		System.out.println("\nPlease enter a valid email adress");
+		System.out.println("\nPlease enter a valid email address");
 		String email = in.nextLine();
 		account.setEmail(email);
 
@@ -88,23 +88,9 @@ public class JobsRUs extends Jobs {
 		account.setPhone(phone);
 
 		a.add(new Account(name, id, email, phone, password));
-		CSVWriter.csvFileWriter(a, "User.csv");
+		CSVWriter.csvFileWriter(a, "C:\\User\\Users.csv");
 		
-		String choice;
-		do {
-			System.out.println("\nDoes this info look correct?" + "\n----------------------------------");
-			System.out.println("\nUser ID: " + account.getUserID() 
-							 + "\nName: " + account.getName() 
-							 + "\nEmail: " + account.getEmail() 
-							 + "\nPhone Number: " + account.getPhone() 
-							 + "\n\nPress Y for Yes and N for No");
-			choice = in.nextLine();
-		} while (!choice.equalsIgnoreCase("Y") && !choice.equalsIgnoreCase("N"));
-			if(choice.equalsIgnoreCase("Y")) {
-				menu(in);
-			} else {
-				editor(in);
-			}
+		editor(in);
 	}
 
 	public static void signIn(Scanner in) {
@@ -119,17 +105,17 @@ public class JobsRUs extends Jobs {
 			if (password.equals(account.getPassword())) {
 				menu(in);
 			} else {
-				System.out.println("Sorry your password was incorrect."
+				System.out.println("\nSorry your password was incorrect."
 						 		 + "\nPlease try again.");
 				signIn(in);
 			}
 		} else {
-			System.out.println("We could not find your account.");
+			System.out.println("\nWe could not find your account.");
 			String sign;
 			do {
-				System.out.println("Try again or create an account."
-								 + "A. Try Again"
-								 + "B. Create Account");
+				System.out.println("\nTry again or create an account."
+								 + "\nA. Try Again"
+								 + "\nB. Create Account");
 				sign = in.nextLine();
 			} while(!sign.equalsIgnoreCase("A") && !sign.equalsIgnoreCase("B"));
 			if (sign.equalsIgnoreCase("A")) {
@@ -142,55 +128,69 @@ public class JobsRUs extends Jobs {
 	
 	public static void editor(Scanner in) {
 		
-		String edit;
+		String choice;
 		do {
-			System.out.println("\nWhat would you like to change?" 
-							 + "\nA. User ID" 
-							 + "\nB. Name" 
-							 + "\nC. Email" 
-							 + "\nD. Phone Number"
-							 + "\nE. No Change Needed");
-			edit = in.nextLine();
-		} while (!edit.equalsIgnoreCase("A") && !edit.equalsIgnoreCase("B") && 
-				 !edit.equalsIgnoreCase("C") && !edit.equalsIgnoreCase("D") && 
-				 !edit.equalsIgnoreCase("E"));
-		
-		if (edit.equalsIgnoreCase("A")) {
-			System.out.println("Please Re-enter User ID: ");
-			String id = in.nextLine();
-			account.setUserID(id);
-			
-		} else if (edit.equalsIgnoreCase("B")) {
-			System.out.println("Please Re-enter Name: ");
-			String name = in.nextLine();
-			account.setName(name);
-			
-		} else if (edit.equalsIgnoreCase("C")) {
-			System.out.println("Please Re-enter Email: ");
-			String email = in.nextLine();
-			account.setEmail(email);
-			
-		} else if (edit.equalsIgnoreCase("D")) {
-			System.out.println("Please Re-enter Phone Number: ");
-			String phone = in.nextLine();
-			account.setPhone(phone);
-			
-		} else {
-			String choice;
-			do {
-				System.out.println("\nDoes this info look correct?" + "\n----------------------------------");
-				System.out.println("\nUser ID: " + account.getUserID() 
-								 + "\nName: " + account.getName() 
-								 + "\nEmail: " + account.getEmail() 
-								 + "\nPhone Number: " + account.getPhone() 
-								 + "\n\nPress Y for Yes and N for No");
-				choice = in.nextLine();
-			} while (!choice.equalsIgnoreCase("Y") && !choice.equalsIgnoreCase("N"));
-			
+			System.out.println("\nDoes this info look correct?" + "\n----------------------------------");
+			System.out.println("\nUser ID: " + account.getUserID() 
+							 + "\nName: " + account.getName() 
+							 + "\nEmail: " + account.getEmail() 
+							 + "\nPhone Number: " + account.getPhone() 
+							 + "\n\nPress Y for Yes and N for No");
+			choice = in.nextLine();
+		} while (!choice.equalsIgnoreCase("Y") && !choice.equalsIgnoreCase("N"));
 			if(choice.equalsIgnoreCase("Y")) {
 				menu(in);
 			} else {
+			String edit;
+			do {
+				System.out.println("\nWhat would you like to change?" 
+								 + "\nA. User ID" 
+								 + "\nB. Name" 
+								 + "\nC. Email" 
+								 + "\nD. Phone Number"
+								 + "\nE. No Change Needed");
+				edit = in.nextLine();
+			} while (!edit.equalsIgnoreCase("A") && !edit.equalsIgnoreCase("B") && 
+					!edit.equalsIgnoreCase("C") && !edit.equalsIgnoreCase("D") && 
+					!edit.equalsIgnoreCase("E"));
+		
+			if (edit.equalsIgnoreCase("A")) {
+				System.out.println("Please Re-enter User ID: ");
+				String id = in.nextLine();
+				account.setUserID(id);
 				editor(in);
+			} else if (edit.equalsIgnoreCase("B")) {
+				System.out.println("Please Re-enter Name: ");
+				String name = in.nextLine();
+				account.setName(name);
+				editor(in);
+			} else if (edit.equalsIgnoreCase("C")) {
+				System.out.println("Please Re-enter Email: ");
+				String email = in.nextLine();
+				account.setEmail(email);
+				editor(in);
+			} else if (edit.equalsIgnoreCase("D")) {
+				System.out.println("Please Re-enter Phone Number: ");
+				String phone = in.nextLine();
+				account.setPhone(phone);
+				editor(in);
+			} else {
+				String choice1;
+				do {
+					System.out.println("\nDoes this info look correct?" + "\n----------------------------------");
+					System.out.println("\nUser ID: " + account.getUserID() 
+								  	 + "\nName: " + account.getName() 
+								  	 + "\nEmail: " + account.getEmail() 
+								  	 + "\nPhone Number: " + account.getPhone() 
+								  	 + "\n\nPress Y for Yes and N for No");
+					choice1 = in.nextLine();
+				} while (!choice1.equalsIgnoreCase("Y") && !choice1.equalsIgnoreCase("N"));
+			
+				if(choice.equalsIgnoreCase("Y")) {
+					menu(in);
+				} else {
+					editor(in);
+				}
 			}
 		}
 	}
