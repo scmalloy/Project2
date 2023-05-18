@@ -22,31 +22,25 @@ public class JobsRUs extends Jobs {
 		
 		initialMenu(in);
 		
-		
 	}
 	public static void initialMenu(Scanner in) {
 		String choice;  
 		do { System.out.println("\nA. Create Account" 
-	        				  + "\nB. Sign In" 
-	        				  + "\nC. View Jobs" 
-	        				  + "\nD. Quit");
+	        				  + "\nB. Sign In"  
+	        				  + "\nC. Quit");
 		
 		choice = in.nextLine();
 		} while (!choice.equalsIgnoreCase("A") && !choice.equalsIgnoreCase("B") && 
-				 !choice.equalsIgnoreCase("C") && !choice.equalsIgnoreCase("D"));
+				 !choice.equalsIgnoreCase("C"));
 		
 		if (choice.equalsIgnoreCase("A")) {
 			createAccount(in);
 				
 		} else if (choice.equalsIgnoreCase("B")) {
 			 signIn(in);
-			  
-		} else if (choice.equalsIgnoreCase("C")) {
-			jobSelection(in);
-				
 		} else {
-			System.out.println("Have a great day! \nGoodbye");
-		}	
+			System.out.println("Have a great day! \nGoodbye!");
+		}
 	}
 	
 	public static void menu(Scanner in) {
@@ -60,11 +54,12 @@ public class JobsRUs extends Jobs {
 				 !choice.equalsIgnoreCase("C"));
 		
 		if (choice.equalsIgnoreCase("A")) {
-			jobSelection(in);	
+			jobSelection(in);
 		} else if (choice.equalsIgnoreCase("B")) {
 			CSVWriter.writeResume(in);
+			menu(in);
 		} else {
-			System.out.println("Have a great day! \nGoodbye");
+			System.out.println("Have a great day! \nGoodbye!");
 		}	
 	}
 	
@@ -191,11 +186,12 @@ public class JobsRUs extends Jobs {
 								 + "\n\nPress Y for Yes and N for No");
 				choice = in.nextLine();
 			} while (!choice.equalsIgnoreCase("Y") && !choice.equalsIgnoreCase("N"));
-				if(choice.equalsIgnoreCase("Y")) {
-				
-				} else {
-					editor(in);
-				}
+			
+			if(choice.equalsIgnoreCase("Y")) {
+				menu(in);
+			} else {
+				editor(in);
+			}
 		}
 	}
 	
