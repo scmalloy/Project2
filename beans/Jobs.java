@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import com.skillstorm.CSVWriter;
 import com.skillstorm.JobsRUs;
+import com.skillstorm.Account;
 
 public class Jobs extends CSVWriter {
 
@@ -59,63 +60,83 @@ public class Jobs extends CSVWriter {
 		
 			 if (alljobslist.equalsIgnoreCase("A")) {
 				 System.out.println("Congratulations you have officially applied for the Computer Support Technician role!");
+				 Account.addToApp("Computer Support Technician");
 				 loopPrompt(in);
 			 } else  if (alljobslist.equalsIgnoreCase("B")) {
 				 System.out.println("Congratulations you have officially applied for the Desktop Support Technician role!");
+				 Account.addToApp("Desktop Support Technician");
 				 loopPrompt(in);
 			 } else  if (alljobslist.equalsIgnoreCase("C")) {
 				 System.out.println("Congratulations you have officially applied for the Machine Learning Engineer role!");
+				 Account.addToApp("Machine Learning Engineer");
 				 loopPrompt(in);
 			 } else if (alljobslist.equalsIgnoreCase("D")) {
 				 System.out.println("Congratulations you have officially applied for the Senior Software Engineer role!");
+				 Account.addToApp("Senior Software Engineer");
 				 loopPrompt(in);
 			 } else  if (alljobslist.equalsIgnoreCase("E")) {
 				 System.out.println("Congratulations you have officially applied for the Electrical Engineer - Entry Level role!");
+				 Account.addToApp("Electrical Engineer");
 				 loopPrompt(in);
 			 } else  if (alljobslist.equalsIgnoreCase("F")) {
 				 System.out.println("Congratulations you have officially applied for the Network Engineer - 1 role!");
+				 Account.addToApp("Network Engineer");
 				 loopPrompt(in);
 			 } else if (alljobslist.equalsIgnoreCase("G")) {
 				 System.out.println("Congratulations you have officially applied for the Nuclear Engineer - Mid Level role!");
+				 Account.addToApp("Nuclear Engineer");
 				 loopPrompt(in);
 			 } else  if (alljobslist.equalsIgnoreCase("H")) {
-				 System.out.println("Congratulations you have officially applied for the Entry Level Solar Sales Representative role!");
+				 System.out.println("Congratulations you have officially applied for the Supervisory Mechanical Engineer role!");
+				 Account.addToApp("Supervisory Mechanical Engineer");
 				 loopPrompt(in);
 			 } else  if (alljobslist.equalsIgnoreCase("I")) {
 				 System.out.println("Congratulations you have officially applied for the Deposit Support Specialist role!");
+				 Account.addToApp("Deposit Support Specialist");
 				 loopPrompt(in);
 			 } else if (alljobslist.equalsIgnoreCase("J")) {
 				 System.out.println("Congratulations you have officially applied for the Finance Director role!");
+				 Account.addToApp("Finance Director");
 				 loopPrompt(in);
 			 } else if (alljobslist.equalsIgnoreCase("K")) {
 				 System.out.println("Congratulations you have officially applied for the Financial Analyst role!");
+				 Account.addToApp("Financial Analyst");
 				 loopPrompt(in);
 			 } else if (alljobslist.equalsIgnoreCase("L")) {
 				 System.out.println("Congratulations you have officially applied for the Financial Compliance Manager role!");
+				 Account.addToApp("Financial Compliance Manager");
 				 loopPrompt(in);
 			 } else if (alljobslist.equalsIgnoreCase("M")) {
 				 System.out.println("Congratulations you have officially applied for the Clinic Medical Assistant role!");
+				 Account.addToApp("Clinic Medical Assistant");
 				 loopPrompt(in);
 			 } else if (alljobslist.equalsIgnoreCase("N")) {
-				 System.out.println("Congratulations you have officially applied for the Community Health Workern role!");
+				 System.out.println("Congratulations you have officially applied for the Community Health Worker role!");
+				 Account.addToApp("Community Health Worker");
 				 loopPrompt(in);
 			 } else if (alljobslist.equalsIgnoreCase("O")) {
 				 System.out.println("Congratulations you have officially applied for the Physical Therapist role!");
+				 Account.addToApp("Physical Therapist");
 				 loopPrompt(in);
 			 } else if (alljobslist.equalsIgnoreCase("P")) {
 				 System.out.println("Congratulations you have officially applied for the Psychiatric Nurse Practitioner role!");
+				 Account.addToApp("Psychiatric Nurse Practitioner");
 				 loopPrompt(in);
 			 } else if (alljobslist.equalsIgnoreCase("Q")) {
 				 System.out.println("Congratulations you have officially applied for the Automotive Sales Consultant role!");
+				 Account.addToApp("Automotive Sales Consultant");
 				 loopPrompt(in);
 			 } else if (alljobslist.equalsIgnoreCase("R")) {
 				 System.out.println("Congratulations you have officially applied for the Entry Level Solar Sales Representative role!");
+				 Account.addToApp("");
 				 loopPrompt(in);
 			 } else if (alljobslist.equalsIgnoreCase("S")) {
 				 System.out.println("Congratulations you have officially applied for the General Sales Manager role!");
+				 Account.addToApp("General Sales Manager");
 				 loopPrompt(in);
 			 } else if (alljobslist.equalsIgnoreCase("T")) {
 				 System.out.println("Congratulations you have officially applied for the Used Truck Sales Representative role!");
+				 Account.addToApp("Used Truck Sales ");
 				 loopPrompt(in);
 			 } else {
 				 JobsRUs.jobSelection(in);
