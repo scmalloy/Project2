@@ -196,5 +196,21 @@ public class CSVWriter extends JobsRUs {
 	        
 	        return columnWidths;
 	    }
+	
+	public void loopPrompt(Scanner in) {
+			
+			String yesorno;
+			do {
+				System.out.println("\nWould you like to apply to another job?"
+					+ "\nChoose Y to return to the Job Selection homescreen or N to end your session.");
+				yesorno = in.nextLine();
+			} while (!yesorno.equalsIgnoreCase("Y") && !yesorno.equalsIgnoreCase("N"));
+		
+			if(yesorno.equalsIgnoreCase("Y")) {
+				JobsRUs.jobSelection(in);
+			} else {
+				System.out.println("This concludes your job application!");
+			}
+		}
 		
 }	
