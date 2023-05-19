@@ -1,9 +1,12 @@
 package com.skillstorm.project;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -151,4 +154,47 @@ public class CSVWriter extends JobsRUs {
 				ex.printStackTrace();
 			}
 	}
+	
+	 public static List<String[]> readCSV(String filePath) throws IOException {
+	        List<String[]> csvData = new ArrayList<>();
+	        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+	            String line;
+	            while ((line = reader.readLine()) != null) {
+	                String[] row = line.split(",");
+	                csvData.add(row);
+	            }
+	        }
+	        return csvData;
+	    }
+
+	    public static void formatAsTable(List<String[]> data) {
+	        int[] columnWidths = calculateColumnWidths(data);
+
+	        for (String[] row : data) {
+	            StringBuilder formattedRow = new StringBuilder();
+	            for (int i = 0; i < row.length; i++) {
+	                String cell = row[i];
+	                String formattedCell = String.format("%-" + columnWidths[i] + "s", cell);
+	                formattedRow.append(formattedCell).append(" | ");
+	            }
+	            System.out.println(formattedRow.toString());
+	        }
+	    }
+
+	    public static int[] calculateColumnWidths(List<String[]> data) {
+	        int columnCount = data.get(0).length;
+	        int[] columnWidths = new int[columnCount];
+	        
+	        for (String[] row : data) {
+	            for (int i = 0; i < columnCount; i++) {
+	                int cellLength = row[i].length();
+	                if (cellLength > columnWidths[i]) {
+	                    columnWidths[i] = cellLength;
+	                }
+	            }
+	        }
+	        
+	        return columnWidths;
+	    }
+		
 }	
