@@ -23,7 +23,7 @@ public class PayRange extends CSVWriter {
 					+ "\nD. $80,000 - $100,000"
 					+ "\nE. $100,000+");
 			payRange = in.nextLine();
-			System.out.println("---------------------------------{ processing........ }---------------------------------\n");
+			System.out.println("--------------------------------- { processing........ } ---------------------------------\n");
 		} while (!payRange.equalsIgnoreCase("A") && !payRange.equalsIgnoreCase("B") 
 				&& !payRange.equalsIgnoreCase("C") && !payRange.equalsIgnoreCase("D") && !payRange.equalsIgnoreCase("E"));
 		
@@ -51,12 +51,12 @@ public class PayRange extends CSVWriter {
 			String listA;
 			do {
 				System.out.println("\nPlease choose A, B, C, D or E for the job you would like to apply to: "
-							 + "\n\nA. Automotive Sales Consultant"); 
-				System.out.println("B. Clinic Medical Assistant"); 
-				System.out.println("C. Community Health Work"); 
-				System.out.println("D. Deposit Support Specialist"); 
-				System.out.println("E. Used Truck Sales Representative");
-				System.out.println("F. Return to the Job Selection homescreen"); 
+								+ "\n\nA. Automotive Sales Consultant" 
+								+ "\nB. Clinic Medical Assistant"
+								+ "\nC. Community Health Work"
+								+ "\nD. Deposit Support Specialist"
+								+ "\nE. Used Truck Sales Representative"
+								+ "\nF. Return to the Job Selection homescreen");
 				listA = in.nextLine();
 			
 			} while (!listA.equalsIgnoreCase("A") && !listA.equalsIgnoreCase("B") 
@@ -98,10 +98,10 @@ public class PayRange extends CSVWriter {
 	 		String listB;
 	 		do {
 	 			System.out.println("\nPlease choose A, B or C for the job you would like to apply to: "
-	 					         + "\n\nA. Computer Support Technician"); 
-				System.out.println("B. Desktop Support Technician"); 
-				System.out.println("C. Electrical Engineer - Entry Level"); 
-				System.out.println("D. Return to the Job Selection homescreen"); 
+	 					         + "\n\nA. Computer Support Technician" 
+	 					         + "\nB. Desktop Support Technician"
+	 					         + "\nC. Electrical Engineer - Entry Level" 
+	 					         + "\nD. Return to the Job Selection homescreen"); 
 				listB = in.nextLine();
 			
 	 		} while (!listB.equalsIgnoreCase("A") && !listB.equalsIgnoreCase("B") 
@@ -136,10 +136,10 @@ public class PayRange extends CSVWriter {
 			String listC;
 			do {
 				System.out.println("\nPlease choose A, B or C for the job you would like to apply to: "
-						         + "\n\nA.Entry Level Solar Sales Representative"); 
-				System.out.println("B. Financial Analyst"); 
-				System.out.println("C. Network Engineer - 1");
-				System.out.println("D. Return to the Job Selection homescreen"); 
+						         + "\n\nA.Entry Level Solar Sales Representative" 
+						         + "\nB. Financial Analyst"
+						         + "\nC. Network Engineer - 1"
+						         + "\nD. Return to the Job Selection homescreen"); 
 				listC = in.nextLine();
 			
 			} while (!listC.equalsIgnoreCase("A") && !listC.equalsIgnoreCase("B") 
@@ -174,10 +174,10 @@ public class PayRange extends CSVWriter {
 	 		String listD;
 	 		do {
 	 			System.out.println("\nPlease choose A, B, or C for the job you would like to apply to: "
-	 					         + "\n\nA. Finance Director"); 
-				System.out.println("B. Physical Therapist"); 
-				System.out.println("C. Supervisory Mechanical Engineer"); 
-				System.out.println("D. Return to the Job Selection homescreen"); 
+	 					        + "\n\nA. Finance Director"
+	 							+ "\nB. Physical Therapist"
+	 							+ "\nC. Supervisory Mechanical Engineer"
+	 							+ "\nD. Return to the Job Selection homescreen"); 
 				listD = in.nextLine();
 			
 	 		} while (!listD.equalsIgnoreCase("A") && !listD.equalsIgnoreCase("B") 
@@ -199,8 +199,8 @@ public class PayRange extends CSVWriter {
 			JobsRUs.jobSelection(in);
 		}
 	}
-
-	// FIX EXCEPTION*****************
+	
+	
 	private void jobListE(Scanner in) { System.out.println("\n------------------------------------- $100,000+ -------------------------------------\n");
 		try {
 			List<String[]> csvData = readCSV("C:\\Users\\sarah\\Downloads\\jobListings\\jobListingSalaryListE.csv");
@@ -212,13 +212,13 @@ public class PayRange extends CSVWriter {
 			String listE;
 			do {
 				System.out.println("\nPlease choose A, B, C, D, E, or F for the job you would like to apply to: "
-						         + "\n\nA. Financial Compliance Manager");
-				System.out.println("B. General Sales Manager"); 
-				System.out.println("C. Machine Learning Engineer"); 
-				System.out.println("D. Nuclear Engineer - Mid Level"); 
-				System.out.println("E. Psychiatric Nurse Practitioner"); 
-				System.out.println("F. Senior Software Engineer");
-				System.out.println("G. Return to the Job Selection homescreen"); 
+						         + "\n\nA. Financial Compliance Manager"
+						         + "\nB. General Sales Manager"
+						         + "\nC. Machine Learning Engineer"
+						         + "\nD. Nuclear Engineer - Mid Level" 
+						         + "\nE. Psychiatric Nurse Practitioner"
+						         + "\nF. Senior Software Engineer"
+						         + "\nG. Return to the Job Selection homescreen"); 
 				listE = in.nextLine();
 			
 			} while (!listE.equalsIgnoreCase("A") && !listE.equalsIgnoreCase("B") 
