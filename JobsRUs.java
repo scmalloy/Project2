@@ -208,15 +208,15 @@ public class JobsRUs {
 		String selectionType;
 	
 		do {
-			System.out.println("\n*********Job Selection*********");
+			System.out.println("\n----------------------------- Job Selection -----------------------------");
 			System.out.println("Please choose how you would like to filter your job search: "
-					+ "\nA.) All jobs"
-					+ "\nB.) By pay range"
-					+ "\nC.) By location"
-					+ "\nD.) By job field");
+					+ "\nA. All jobs"
+					+ "\nB. By pay range"
+					+ "\nC. By location"
+					+ "\nD. By job field");
 				selectionType = in.nextLine();
 		
-			System.out.println("\n*********************************{ processing........ }*********************************\n");
+			System.out.println("\n----------------------------- { processing........ } -----------------------------\n");
 		} while (!selectionType.equalsIgnoreCase("A") && !selectionType.equalsIgnoreCase("B") 
 				&& !selectionType.equalsIgnoreCase("C") && !selectionType.equalsIgnoreCase("D"));
 	
