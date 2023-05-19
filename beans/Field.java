@@ -7,7 +7,7 @@ import java.util.Scanner;
 import com.skillstorm.CSVWriter;
 import com.skillstorm.JobsRUs;
 
-public class Field extends CSVWriter{
+public class Field extends CSVWriter {
 	
 	public void field(Scanner in) {
 		
@@ -51,18 +51,19 @@ public class Field extends CSVWriter{
 	       } catch (IOException e) {
 	           System.err.println("An error occurred: " + e.getMessage());
 	       }
-		 String eng;
-			do {
-				System.out.println("\nPlease choose A, B, C, or D for the Engineering job you would like to apply to: "
-					+ "\n\nA. Supervisory Mechanical Engineer"); 
-					System.out.println("B. Network Engineer - 1"); 
-					System.out.println("C. Electrical Engineer - Entry Level"); 
-					System.out.println("D. Nuclear Engineer - Mid Level"); 
-					System.out.println("E. Return to the Job Selection homescreen"); 
+		 if (JobsRUs.isSignIn() == true) {
+			 String eng;
+			 do {
+				 System.out.println("\nPlease choose A, B, C, or D for the Engineering job you would like to apply to: "
+						 		  + "\n\nA. Supervisory Mechanical Engineer"); 
+				System.out.println("B. Network Engineer - 1"); 
+				System.out.println("C. Electrical Engineer - Entry Level"); 
+				System.out.println("D. Nuclear Engineer - Mid Level"); 
+				System.out.println("E. Return to the Job Selection homescreen"); 
 				eng = in.nextLine();
 				
 			} while (!eng.equalsIgnoreCase("A") && !eng.equalsIgnoreCase("B") 
-					&& !eng.equalsIgnoreCase("C") && !eng.equalsIgnoreCase("D") && !eng.equalsIgnoreCase("E"));
+		   		  && !eng.equalsIgnoreCase("C") && !eng.equalsIgnoreCase("D") && !eng.equalsIgnoreCase("E"));
 			
 			if (eng.equalsIgnoreCase("A")) {
 				System.out.println("Congratulations you have officially applied for the Supervisory Mechanical Engineer role!");
@@ -79,6 +80,9 @@ public class Field extends CSVWriter{
 			} else {
 				JobsRUs.jobSelection(in);
 			}
+		 } else {
+				JobsRUs.jobSelection(in);
+			}
 
 	}
 	
@@ -91,18 +95,19 @@ public class Field extends CSVWriter{
 	       } catch (IOException e) {
 	           System.err.println("An error occurred: " + e.getMessage());
 	       }
+		 if (JobsRUs.isSignIn() == true) {
 		 String sales;
 			do {
 				System.out.println("\nPlease choose A, B, C, or D the Sales job you would like to apply to: "
-					+ "\n\nA. Automotive Sales Consultant"); 
-					System.out.println("B. General Sales Manager");
-					System.out.println("C. Used Truck Sales Representative");
-					System.out.println("D. Entry Level Solar Sales Representative"); 
-					System.out.println("E. Return to the Job Selection homescreen"); 
+								 + "\n\nA. Automotive Sales Consultant"); 
+				System.out.println("B. General Sales Manager");
+				System.out.println("C. Used Truck Sales Representative");
+				System.out.println("D. Entry Level Solar Sales Representative"); 
+				System.out.println("E. Return to the Job Selection homescreen"); 
 				sales = in.nextLine();
 				
 			} while (!sales.equalsIgnoreCase("A") && !sales.equalsIgnoreCase("B") 
-					&& !sales.equalsIgnoreCase("C") && !sales.equalsIgnoreCase("D") && !sales.equalsIgnoreCase("E"));
+				  && !sales.equalsIgnoreCase("C") && !sales.equalsIgnoreCase("D") && !sales.equalsIgnoreCase("E"));
 			
 			if (sales.equalsIgnoreCase("A")) {
 				System.out.println("Congratulations you have officially applied for the Automotive Sales Consultant role!");
@@ -118,7 +123,9 @@ public class Field extends CSVWriter{
 				loopPrompt(in);
 			} else {
 				JobsRUs.jobSelection(in);
-				
+			}
+		 } else {
+				JobsRUs.jobSelection(in);
 			}
 	}
 	
@@ -131,14 +138,15 @@ public class Field extends CSVWriter{
 	       } catch (IOException e) {
 	           System.err.println("An error occurred: " + e.getMessage());
 	       }
+		 if (JobsRUs.isSignIn() == true) {
 		 String fin;
 			do {
 				System.out.println("\nPlease choose A, B, C, or D the Finance job you would like to apply to: "
-					+ "\n\nA. Finance Director"); 
-					System.out.println("B. Financial Analyst");
-					System.out.println("C. Financial Compliance Manager"); 
-					System.out.println("D. Deposit Support Specialist"); 
-					System.out.println("E. Return to the Job Selection homescreen"); 
+								 + "\n\nA. Finance Director"); 
+				System.out.println("B. Financial Analyst");
+				System.out.println("C. Financial Compliance Manager"); 
+				System.out.println("D. Deposit Support Specialist"); 
+				System.out.println("E. Return to the Job Selection homescreen"); 
 				fin = in.nextLine();
 				
 			} while (!fin.equalsIgnoreCase("A") && !fin.equalsIgnoreCase("B") 
@@ -159,6 +167,9 @@ public class Field extends CSVWriter{
 			} else {
 				JobsRUs.jobSelection(in);
 			}
+		 } else {
+				JobsRUs.jobSelection(in);
+			}
 	}
 	
 	
@@ -170,14 +181,15 @@ public class Field extends CSVWriter{
 	       } catch (IOException e) {
 	           System.err.println("An error occurred: " + e.getMessage());
 	       }
+		 if (JobsRUs.isSignIn() == true) {
 		 String compIT;
 			do {
 				System.out.println("\nPlease choose A, B, C, or D the Computer and Information Technology job you would like to apply to: "
-					+ "\n\nA. Senior Software Engineer"); 
-					System.out.println("B. Computer Support Technician"); 
-					System.out.println("C. Machine Learning Engineer"); 
-					System.out.println("D. Desktop Support Technician"); 
-					System.out.println("E. Return to the Job Selection homescreen"); 
+								 + "\n\nA. Senior Software Engineer"); 
+				System.out.println("B. Computer Support Technician"); 
+				System.out.println("C. Machine Learning Engineer"); 
+				System.out.println("D. Desktop Support Technician"); 
+				System.out.println("E. Return to the Job Selection homescreen"); 
 				compIT = in.nextLine();
 				
 			} while (!compIT.equalsIgnoreCase("A") && !compIT.equalsIgnoreCase("B") 
@@ -198,6 +210,9 @@ public class Field extends CSVWriter{
 			} else {
 				JobsRUs.jobSelection(in);
 			}
+		 } else {
+				JobsRUs.jobSelection(in);
+			}
 	}
 	
 	
@@ -209,14 +224,15 @@ public class Field extends CSVWriter{
 	       } catch (IOException e) {
 	           System.err.println("An error occurred: " + e.getMessage());
 	       }
+		 if (JobsRUs.isSignIn() == true) {
 		 String health;
 			do {
 				System.out.println("\nPlease choose A, B, C, or D the Healthcare job you would like to apply to: "
-					+ "\n\nA. Community Health Worker");
-					System.out.println("B. Clinic Medical Assistant");
-					System.out.println("C. Physical Therapist");
-					System.out.println("D. Psychiatric Nurse Practitioner");
-					System.out.println("E. Return to the Job Selection homescreen"); 
+								 + "\n\nA. Community Health Worker");
+				System.out.println("B. Clinic Medical Assistant");
+				System.out.println("C. Physical Therapist");
+				System.out.println("D. Psychiatric Nurse Practitioner");
+				System.out.println("E. Return to the Job Selection homescreen"); 
 				health = in.nextLine();
 				
 			} while (!health.equalsIgnoreCase("A") && !health.equalsIgnoreCase("B") 
@@ -237,7 +253,8 @@ public class Field extends CSVWriter{
 			} else {
 				JobsRUs.jobSelection(in);
 			}
+		 } else {
+				JobsRUs.jobSelection(in);
+		 }
 	}
-	
-
 }
