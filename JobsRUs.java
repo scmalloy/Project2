@@ -237,4 +237,10 @@ public class JobsRUs extends Jobs {
 			field.field();
 		}
 	}	
+	public static boolean isSignIn() {
+		return signIn;
+	}
+	public static void setSignIn(boolean signIn) {
+		JobsRUs.signIn = signIn;
+	}
 }
