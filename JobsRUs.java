@@ -10,7 +10,7 @@ import com.skillstorm.beans.PayRange;
 
 public class JobsRUs extends Jobs {
 	
-	static boolean signIn;
+	private static boolean signIn;
 	static ArrayList<Account> a = new ArrayList<>();
 	static Account account = new Account();
 
@@ -112,7 +112,7 @@ public class JobsRUs extends Jobs {
 			String password = in.nextLine();
 			if (password.equals(account.getPassword())) {
 				menu(in);
-				signIn = true;
+				setSignIn(true);
 			} else {
 				System.out.println("\nSorry your password was incorrect."
 						 		 + "\nPlease try again.");
