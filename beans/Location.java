@@ -7,7 +7,7 @@ import java.util.Scanner;
 import com.skillstorm.CSVWriter;
 import com.skillstorm.JobsRUs;
 
-public class Location extends CSVWriter{
+public class Location extends CSVWriter {
 
 	public void location(Scanner in) {
 		
@@ -49,31 +49,35 @@ public class Location extends CSVWriter{
 		} catch (IOException e) {
 			System.err.println("An error occurred: " + e.getMessage());
 		}
-		String west;
-		do {
-			System.out.println("\nPlease choose A, B, C, or D for the job you would like to apply to: "
-				+ "\n\nA. Clinic Medical Assistant"); 
+		if (JobsRUs.isSignIn() == true) {
+			String west;
+			do {
+				System.out.println("\nPlease choose A, B, C, or D for the job you would like to apply to: "
+							     + "\n\nA. Clinic Medical Assistant"); 
 				System.out.println("B. Computer Support Technician"); 
 				System.out.println("C. General Sales Manager"); 
 				System.out.println("D. Supervisory Mechanical Engineer");
 				System.out.println("E. Return to the Job Selection homescreen"); 
-			west = in.nextLine();
+				west = in.nextLine();
 			
-		} while (!west.equalsIgnoreCase("A") && !west.equalsIgnoreCase("B") 
-				&& !west.equalsIgnoreCase("C") && !west.equalsIgnoreCase("D") && !west.equalsIgnoreCase("E"));
+			} while (!west.equalsIgnoreCase("A") && !west.equalsIgnoreCase("B") 
+			 	  && !west.equalsIgnoreCase("C") && !west.equalsIgnoreCase("D") && !west.equalsIgnoreCase("E"));
 		
-		if (west.equalsIgnoreCase("A")) {
-			System.out.println("Congratulations you have officially applied for the Clinic Medical Assistant role!"); // try catch
-			loopPrompt(in);
-		} else  if (west.equalsIgnoreCase("B")) {
-			System.out.println("Congratulations you have officially applied for the Computer Support Technician role!");
-			loopPrompt(in);
-		} else  if (west.equalsIgnoreCase("C")) {
-			System.out.println("Congratulations you have officially applied for the General Sales Manager role!");
-			loopPrompt(in);
-		} else if (west.equalsIgnoreCase("D")) {
-			System.out.println("Congratulations you have officially applied for the Supervisory Mechanical Engineer  role!");
-			loopPrompt(in);
+			if (west.equalsIgnoreCase("A")) {
+				System.out.println("Congratulations you have officially applied for the Clinic Medical Assistant role!"); // try catch
+				loopPrompt(in);
+			} else  if (west.equalsIgnoreCase("B")) {
+				System.out.println("Congratulations you have officially applied for the Computer Support Technician role!");
+				loopPrompt(in);
+			} else  if (west.equalsIgnoreCase("C")) {
+				System.out.println("Congratulations you have officially applied for the General Sales Manager role!");
+				loopPrompt(in);
+			} else if (west.equalsIgnoreCase("D")) {
+				System.out.println("Congratulations you have officially applied for the Supervisory Mechanical Engineer  role!");
+				loopPrompt(in);
+			} else {
+				JobsRUs.jobSelection(in);
+			}
 		} else {
 			JobsRUs.jobSelection(in);
 		}
@@ -87,32 +91,36 @@ public class Location extends CSVWriter{
     	} catch (IOException e) {
     		System.err.println("An error occurred: " + e.getMessage());
     	}
-	 	String midwest;
-		do {
-			System.out.println("\nPlease choose A, B, C, or D for the job you would like to apply to: "
-				+ "\n\nA. Electrical Engineer - Entry Level"); 
+	 	if (JobsRUs.isSignIn() == true) {
+	 		String midwest;
+	 		do {
+	 			System.out.println("\nPlease choose A, B, C, or D for the job you would like to apply to: "
+	 							 + "\n\nA. Electrical Engineer - Entry Level"); 
 				System.out.println("B. Financial Analyst"); 
 				System.out.println("C. Senior Software Engineer"); 
 				System.out.println("D. Used Truck Sales Representativ");
 				System.out.println("E. Return to the Job Selection homescreen"); 
-			midwest = in.nextLine();
+				midwest = in.nextLine();
 			
-		} while (!midwest.equalsIgnoreCase("A") && !midwest.equalsIgnoreCase("B") 
-				&& !midwest.equalsIgnoreCase("C") && !midwest.equalsIgnoreCase("D") && !midwest.equalsIgnoreCase("E"));
+	 		} while (!midwest.equalsIgnoreCase("A") && !midwest.equalsIgnoreCase("B") 
+				  && !midwest.equalsIgnoreCase("C") && !midwest.equalsIgnoreCase("D") && !midwest.equalsIgnoreCase("E"));
 		
-		if (midwest.equalsIgnoreCase("A")) {
-			System.out.println("Congratulations you have officially applied for the Electrical Engineer - Entry Level role!");
-			loopPrompt(in);
-		} else  if (midwest.equalsIgnoreCase("B")) {
-			System.out.println("Congratulations you have officially applied for the Financial Analyst role!");
-			loopPrompt(in);
-		} else  if (midwest.equalsIgnoreCase("C")) {
-			System.out.println("Congratulations you have officially applied for the Senior Software Engineer role!");
-			loopPrompt(in);
-		} else if (midwest.equalsIgnoreCase("D")) {
-			System.out.println("Congratulations you have officially applied for the Used Truck Sales Representativ role!");
-			loopPrompt(in);
-		} else {
+	 		if (midwest.equalsIgnoreCase("A")) {
+	 			System.out.println("Congratulations you have officially applied for the Electrical Engineer - Entry Level role!");
+	 			loopPrompt(in);
+	 		} else  if (midwest.equalsIgnoreCase("B")) {
+	 			System.out.println("Congratulations you have officially applied for the Financial Analyst role!");
+	 			loopPrompt(in);
+	 		} else  if (midwest.equalsIgnoreCase("C")) {
+	 			System.out.println("Congratulations you have officially applied for the Senior Software Engineer role!");
+	 			loopPrompt(in);
+	 		} else if (midwest.equalsIgnoreCase("D")) {
+	 			System.out.println("Congratulations you have officially applied for the Used Truck Sales Representativ role!");
+	 			loopPrompt(in);
+	 		} else {
+	 			JobsRUs.jobSelection(in);
+	 		}
+	 	} else {
 			JobsRUs.jobSelection(in);
 		}
 	}
@@ -125,28 +133,32 @@ public class Location extends CSVWriter{
 	 	} catch (IOException e) {
 	 		System.err.println("An error occurred: " + e.getMessage());
 	 	}
-	 	String southwest;
-		do {
-			System.out.println("\nPlease choose A, B, or C for the job you would like to apply to: "
-				+ "\n\nA. Community Health Worker"); 
+	 	if (JobsRUs.isSignIn() == true) {
+	 		String southwest;
+	 		do {
+	 			System.out.println("\nPlease choose A, B, or C for the job you would like to apply to: "
+	 							 + "\n\nA. Community Health Worker"); 
 				System.out.println("B. Deposit Support Specialist"); 
 				System.out.println("C. Physical Therapist"); 
 				System.out.println("D. Return to the Job Selection homescreen"); 
-			southwest = in.nextLine();
+				southwest = in.nextLine();
 			
-		} while (!southwest.equalsIgnoreCase("A") && !southwest.equalsIgnoreCase("B") 
-				&& !southwest.equalsIgnoreCase("C") && !southwest.equalsIgnoreCase("D"));
+	 		} while (!southwest.equalsIgnoreCase("A") && !southwest.equalsIgnoreCase("B") 
+	 			  && !southwest.equalsIgnoreCase("C") && !southwest.equalsIgnoreCase("D"));
 		
-		if (southwest.equalsIgnoreCase("A")) {
-			System.out.println("Congratulations you have officially applied for the Community Health Worker role!");
-			loopPrompt(in);
-		} else  if (southwest.equalsIgnoreCase("B")) {
-			System.out.println("Congratulations you have officially applied for the Deposit Support Specialist role!");
-			loopPrompt(in);
-		} else  if (southwest.equalsIgnoreCase("C")) {
-			System.out.println("Congratulations you have officially applied for the Physical Therapist role!");
-			loopPrompt(in);
-		} else {
+	 		if (southwest.equalsIgnoreCase("A")) {
+	 			System.out.println("Congratulations you have officially applied for the Community Health Worker role!");
+	 			loopPrompt(in);
+	 		} else  if (southwest.equalsIgnoreCase("B")) {
+	 			System.out.println("Congratulations you have officially applied for the Deposit Support Specialist role!");
+	 			loopPrompt(in);
+	 		} else  if (southwest.equalsIgnoreCase("C")) {
+	 			System.out.println("Congratulations you have officially applied for the Physical Therapist role!");
+	 			loopPrompt(in);
+	 		} else {
+	 			JobsRUs.jobSelection(in);
+	 		}
+	 	} else {
 			JobsRUs.jobSelection(in);
 		}
 	}
@@ -159,32 +171,36 @@ public class Location extends CSVWriter{
 	 	} catch (IOException e) {
 	 		System.err.println("An error occurred: " + e.getMessage());
 	 	}
-	 	String southeast;
-		do {
-			System.out.println("\nPlease choose A, B, C, or D for the job you would like to apply to: "
-				+ "\n\nA. Entry Level Solar Sales Representative"); 
+	 	if (JobsRUs.isSignIn() == true) {
+	 		String southeast;
+	 		do {
+	 			System.out.println("\nPlease choose A, B, C, or D for the job you would like to apply to: "
+	 							 + "\n\nA. Entry Level Solar Sales Representative"); 
 				System.out.println("B. Finance Director"); 
 				System.out.println("C. Network Engineer - 1"); 
 				System.out.println("D. Psychiatric Nurse Practitioner");
 				System.out.println("E. Return to the Job Selection homescreen"); 
-			southeast = in.nextLine();
+				southeast = in.nextLine();
 			
-		} while (!southeast.equalsIgnoreCase("A") && !southeast.equalsIgnoreCase("B") 
-				&& !southeast.equalsIgnoreCase("C") && !southeast.equalsIgnoreCase("D") && !southeast.equalsIgnoreCase("E"));
+	 		} while (!southeast.equalsIgnoreCase("A") && !southeast.equalsIgnoreCase("B") 
+			 	  && !southeast.equalsIgnoreCase("C") && !southeast.equalsIgnoreCase("D") && !southeast.equalsIgnoreCase("E"));
 		
-		if (southeast.equalsIgnoreCase("A")) {
-			System.out.println("Congratulations you have officially applied for the Entry Level Solar Sales Representative role!");
-			loopPrompt(in);
-		} else  if (southeast.equalsIgnoreCase("B")) {
-			System.out.println("Congratulations you have officially applied for the Finance Director role!");
-			loopPrompt(in);
-		} else  if (southeast.equalsIgnoreCase("C")) {
-			System.out.println("Congratulations you have officially applied for the Network Engineer - 1 role!");
-			loopPrompt(in);
-		} else if (southeast.equalsIgnoreCase("D")) {
-			System.out.println("Congratulations you have officially applied for the Psychiatric Nurse Practitioner role!");
-			loopPrompt(in);
-		} else {
+	 		if (southeast.equalsIgnoreCase("A")) {
+	 			System.out.println("Congratulations you have officially applied for the Entry Level Solar Sales Representative role!");
+	 			loopPrompt(in);
+	 		} else  if (southeast.equalsIgnoreCase("B")) {
+	 			System.out.println("Congratulations you have officially applied for the Finance Director role!");
+	 			loopPrompt(in);
+	 		} else  if (southeast.equalsIgnoreCase("C")) {
+	 			System.out.println("Congratulations you have officially applied for the Network Engineer - 1 role!");
+	 			loopPrompt(in);
+	 		} else if (southeast.equalsIgnoreCase("D")) {
+	 			System.out.println("Congratulations you have officially applied for the Psychiatric Nurse Practitioner role!");
+	 			loopPrompt(in);
+	 		} else {
+	 			JobsRUs.jobSelection(in);
+	 		}
+	 	} else {
 			JobsRUs.jobSelection(in);
 		}
 	}
@@ -197,37 +213,41 @@ public class Location extends CSVWriter{
 	 	} catch (IOException e) {
 	 		System.err.println("An error occurred: " + e.getMessage());
 	 	}
-	 	String northeast;
-		do {
-			System.out.println("\nPlease choose A, B, C, D, or E for the job you would like to apply to: "
-				+ "\n\nA. Automotive Sales Consultant");
+	 	if (JobsRUs.isSignIn() == true) {
+	 		String northeast;
+	 		do {
+	 			System.out.println("\nPlease choose A, B, C, D, or E for the job you would like to apply to: "
+	 							 + "\n\nA. Automotive Sales Consultant");
 				System.out.println("B. Desktop Support Technician");
 				System.out.println("C. Financial Compliance Manager"); 
 				System.out.println("D. Machine Learning Engineer"); 
 				System.out.println("E. Nuclear Engineer - Mid Level");
 				System.out.println("F. Return to the Job Selection homescreen"); 
-			northeast = in.nextLine();
+				northeast = in.nextLine();
 			
-		} while (!northeast.equalsIgnoreCase("A") && !northeast.equalsIgnoreCase("B") 
-				&& !northeast.equalsIgnoreCase("C") && !northeast.equalsIgnoreCase("D") 
-				&& !northeast.equalsIgnoreCase("E") && !northeast.equalsIgnoreCase("F"));
+	 		} while (!northeast.equalsIgnoreCase("A") && !northeast.equalsIgnoreCase("B") 
+				  && !northeast.equalsIgnoreCase("C") && !northeast.equalsIgnoreCase("D") 
+				  && !northeast.equalsIgnoreCase("E") && !northeast.equalsIgnoreCase("F"));
 		
-		if (northeast.equalsIgnoreCase("A")) {
-			System.out.println("Congratulations you have officially applied for the Automotive Sales Consultant role!");
-			loopPrompt(in);
-		} else  if (northeast.equalsIgnoreCase("B")) {
-			System.out.println("Congratulations you have officially applied for the Desktop Support Technician role!");
-			loopPrompt(in);
-		} else  if (northeast.equalsIgnoreCase("C")) {
-			System.out.println("Congratulations you have officially applied for the Financial Compliance Manager role!");
-			loopPrompt(in);
-		} else  if (northeast.equalsIgnoreCase("D")) {
-			System.out.println("Congratulations you have officially applied for the Machine Learning Engineer role!");
-			loopPrompt(in);
-		}else if (northeast.equalsIgnoreCase("E")) {
-			System.out.println("Congratulations you have officially applied for the Nuclear Engineer - Mid Level role!");
-			loopPrompt(in);
-		} else {
+	 		if (northeast.equalsIgnoreCase("A")) {
+	 			System.out.println("Congratulations you have officially applied for the Automotive Sales Consultant role!");
+	 			loopPrompt(in);
+	 		} else  if (northeast.equalsIgnoreCase("B")) {
+	 			System.out.println("Congratulations you have officially applied for the Desktop Support Technician role!");
+	 			loopPrompt(in);
+	 		} else  if (northeast.equalsIgnoreCase("C")) {
+	 			System.out.println("Congratulations you have officially applied for the Financial Compliance Manager role!");
+	 			loopPrompt(in);
+	 		} else  if (northeast.equalsIgnoreCase("D")) {
+	 			System.out.println("Congratulations you have officially applied for the Machine Learning Engineer role!");
+	 			loopPrompt(in);
+	 		}else if (northeast.equalsIgnoreCase("E")) {
+	 			System.out.println("Congratulations you have officially applied for the Nuclear Engineer - Mid Level role!");
+	 			loopPrompt(in);
+	 		} else {
+	 			JobsRUs.jobSelection(in);
+	 		}
+	 	} else {
 			JobsRUs.jobSelection(in);
 		}
 	}
