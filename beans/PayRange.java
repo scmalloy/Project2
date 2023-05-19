@@ -1,4 +1,3 @@
-
 package com.skillstorm.beans;
 
 import java.io.IOException;
@@ -7,6 +6,7 @@ import java.util.Scanner;
 
 import com.skillstorm.CSVWriter;
 import com.skillstorm.JobsRUs;
+import com.skillstorm.Account;
 
 public class PayRange extends CSVWriter {
 
@@ -53,7 +53,7 @@ public class PayRange extends CSVWriter {
 				System.out.println("\nPlease choose A, B, C, D or E for the job you would like to apply to: "
 								+ "\n\nA. Automotive Sales Consultant" 
 								+ "\nB. Clinic Medical Assistant"
-								+ "\nC. Community Health Work"
+								+ "\nC. Community Health Worker"
 								+ "\nD. Deposit Support Specialist"
 								+ "\nE. Used Truck Sales Representative"
 								+ "\nF. Return to the Job Selection homescreen");
@@ -65,18 +65,23 @@ public class PayRange extends CSVWriter {
 		
 			if (listA.equalsIgnoreCase("A")) {
 				System.out.println("Congratulations you have officially applied for the Automotive Sales Consultant role!");
+				Account.addToApp("Automotive Sales Consultant");
 				loopPrompt(in);
 			} else  if (listA.equalsIgnoreCase("B")) {
 				System.out.println("Congratulations you have officially applied for the Clinic Medical Assistant role!");
+				Account.addToApp("Clinic Medical Assistant");
 				loopPrompt(in);
 			} else  if (listA.equalsIgnoreCase("C")) {
-				System.out.println("Congratulations you have officially applied for the Community Health Work role!");
+				System.out.println("Congratulations you have officially applied for the Community Health Worker role!");
+				Account.addToApp("Community Health Worker");
 				loopPrompt(in);
 			} else  if (listA.equalsIgnoreCase("D")) {
 				System.out.println("Congratulations you have officially applied for the Deposit Support Specialist role!");
+				Account.addToApp("Deposit Support Specialist");
 				loopPrompt(in);
 			} else if (listA.equalsIgnoreCase("E")) {
 				System.out.println("Congratulations you have officially applied for the Used Truck Sales Representative role!");
+				Account.addToApp("Used Truck Sales Representative");
 				loopPrompt(in);
 			} else {
 				JobsRUs.jobSelection(in);
@@ -109,12 +114,15 @@ public class PayRange extends CSVWriter {
 		
 	 		if (listB.equalsIgnoreCase("A")) {
 	 			System.out.println("Congratulations you have officially applied for the Computer Support Technician role!");
+	 			Account.addToApp("Computer Support Technician");
 	 			loopPrompt(in);
 	 		} else  if (listB.equalsIgnoreCase("B")) {
 	 			System.out.println("Congratulations you have officially applied for the Desktop Support Technician role!");
+	 			Account.addToApp("Desktop Support Technician");
 	 			loopPrompt(in);
 	 		} else if (listB.equalsIgnoreCase("C")) {
 	 			System.out.println("Congratulations you have officially applied for the Electrical Engineer - Entry Level role!");
+	 			Account.addToApp("Electrical Engineer - Entry Level");
 	 			loopPrompt(in);
 	 		} else {
 	 			JobsRUs.jobSelection(in);
@@ -147,12 +155,15 @@ public class PayRange extends CSVWriter {
 		
 			if (listC.equalsIgnoreCase("A")) {
 				System.out.println("Congratulations you have officially applied for the Entry Level Solar Sales Representative role!");
+				Account.addToApp("Entry Level Solar Sales Representative");
 				loopPrompt(in);
 			} else  if (listC.equalsIgnoreCase("B")) {
 				System.out.println("Congratulations you have officially applied for the Financial Analyst role!");
+				Account.addToApp("Financial Analyst");
 				loopPrompt(in);
 			} else  if (listC.equalsIgnoreCase("C")) {
 				System.out.println("Congratulations you have officially applied for the Network Engineer - 1 role!");
+				Account.addToApp("Network Engineer - 1");
 				loopPrompt(in);
 			} else {
 				JobsRUs.jobSelection(in);
@@ -185,12 +196,15 @@ public class PayRange extends CSVWriter {
 		
 	 		if (listD.equalsIgnoreCase("A")) {
 	 			System.out.println("Congratulations you have officially applied for the Finance Director role!");
+	 			Account.addToApp("Finance Director");
 	 			loopPrompt(in);
 	 		} else  if (listD.equalsIgnoreCase("B")) {
 	 			System.out.println("Congratulations you have officially applied for the Physical Therapist role!");
+	 			Account.addToApp("Physical Therapist");
 	 			loopPrompt(in);
 	 		} else  if (listD.equalsIgnoreCase("C")) {
 	 			System.out.println("Congratulations you have officially applied for the Supervisory Mechanical Engineer role!");
+	 			Account.addToApp("Supervisory Mechanical Engineer");
 	 			loopPrompt(in);
 	 		} else {
 	 			JobsRUs.jobSelection(in);
@@ -228,21 +242,27 @@ public class PayRange extends CSVWriter {
 		
 			if (listE.equalsIgnoreCase("A")) {
 				System.out.println("Congratulations you have officially applied for the Financial Compliance Manager role!");
+				Account.addToApp("Financial Compliance Manager");
 				loopPrompt(in);
 			} else  if (listE.equalsIgnoreCase("B")) {
 				System.out.println("Congratulations you have officially applied for the General Sales Manager role!");
+				Account.addToApp("General Sales Manager");
 				loopPrompt(in);
 			} else  if (listE.equalsIgnoreCase("C")) {
 				System.out.println("Congratulations you have officially applied for the Machine Learning Engineer role!");
+				Account.addToApp("Machine Learning Engineer");
 				loopPrompt(in);
 			} else  if (listE.equalsIgnoreCase("D")) {
 				System.out.println("Congratulations you have officially applied for the Nuclear Engineer - Mid Level role!");
+				Account.addToApp("Nuclear Engineer - Mid Level");
 				loopPrompt(in);
 			} else  if (listE.equalsIgnoreCase("E")) {
 				System.out.println("Congratulations you have officially applied for the Psychiatric Nurse Practitioner role!");
+				Account.addToApp("Psychiatric Nurse Practitioner");
 				loopPrompt(in);
 			} else if (listE.equalsIgnoreCase("F")) {
 				System.out.println("Congratulations you have officially applied for the Senior Software Engineer role!");
+				Account.addToApp("Senior Software Engineer");
 				loopPrompt(in);
 			} else {
 				JobsRUs.jobSelection(in);
