@@ -10,6 +10,7 @@ import com.skillstorm.beans.PayRange;
 
 public class JobsRUs extends Jobs {
 	
+	static boolean signIn;
 	static ArrayList<Account> a = new ArrayList<>();
 	static Account account = new Account();
 
@@ -26,18 +27,21 @@ public class JobsRUs extends Jobs {
 	public static void initialMenu(Scanner in) {
 		String choice;  
 		do { System.out.println("\nA. Create Account" 
-	        				  + "\nB. Sign In"  
-	        				  + "\nC. Quit");
+	        				  + "\nB. Sign In"
+	        				  + "\nC. View Jobs"  
+	        				  + "\nD. Quit");
 		
 		choice = in.nextLine();
 		} while (!choice.equalsIgnoreCase("A") && !choice.equalsIgnoreCase("B") && 
-				 !choice.equalsIgnoreCase("C"));
+				 !choice.equalsIgnoreCase("C") && !choice.equalsIgnoreCase("D"));
 		
 		if (choice.equalsIgnoreCase("A")) {
 			createAccount(in);
 				
 		} else if (choice.equalsIgnoreCase("B")) {
 			 signIn(in);
+		} else if (choice.equalsIgnoreCase("C")) {
+			 jobSelection(in);
 		} else {
 			System.out.println("Have a great day! \nGoodbye!");
 		}
@@ -46,22 +50,26 @@ public class JobsRUs extends Jobs {
 	public static void menu(Scanner in) {
 		String choice;  
 		do { System.out.println("\nA. View Jobs" 
-	        				  + "\nB. Create Resume" 
-	        				  + "\nC. Quit");
+	        				  + "\nB. Create Resume"
+	        				  + "\nC. Edit Account" 
+	        				  + "\nD. Quit");
 		
 		choice = in.nextLine();
 		} while (!choice.equalsIgnoreCase("A") && !choice.equalsIgnoreCase("B") && 
-				 !choice.equalsIgnoreCase("C"));
+				 !choice.equalsIgnoreCase("C") && !choice.equalsIgnoreCase("D"));
 		
 		if (choice.equalsIgnoreCase("A")) {
 			jobSelection(in);
 		} else if (choice.equalsIgnoreCase("B")) {
 			CSVWriter.writeResume(in);
 			menu(in);
+		} else if (choice.equalsIgnoreCase("C")) {
+			editor(in);
 		} else {
 			System.out.println("Have a great day! \nGoodbye!");
 		}	
 	}
+	
 	
 	public static void createAccount(Scanner in) {
 		
@@ -104,6 +112,7 @@ public class JobsRUs extends Jobs {
 			String password = in.nextLine();
 			if (password.equals(account.getPassword())) {
 				menu(in);
+				signIn = true;
 			} else {
 				System.out.println("\nSorry your password was incorrect."
 						 		 + "\nPlease try again.");
@@ -140,6 +149,7 @@ public class JobsRUs extends Jobs {
 		} while (!choice.equalsIgnoreCase("Y") && !choice.equalsIgnoreCase("N"));
 			if(choice.equalsIgnoreCase("Y")) {
 				menu(in);
+				signIn = true;
 			} else {
 			String edit;
 			do {
@@ -188,12 +198,14 @@ public class JobsRUs extends Jobs {
 			
 				if(choice.equalsIgnoreCase("Y")) {
 					menu(in);
+					signIn = true;
 				} else {
 					editor(in);
 				}
 			}
 		}
 	}
+	
 	
 	public static void jobSelection(Scanner in) {
 		String selectionType;
