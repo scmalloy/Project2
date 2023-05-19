@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import com.skillstorm.CSVWriter;
 import com.skillstorm.JobsRUs;
+import com.skillstorm.Account;
 
 public class Location extends CSVWriter {
 
@@ -64,16 +65,20 @@ public class Location extends CSVWriter {
 			 	  && !west.equalsIgnoreCase("C") && !west.equalsIgnoreCase("D") && !west.equalsIgnoreCase("E"));
 		
 			if (west.equalsIgnoreCase("A")) {
-				System.out.println("Congratulations you have officially applied for the Clinic Medical Assistant role!"); // try catch
+				System.out.println("Congratulations you have officially applied for the Clinic Medical Assistant role!"); 
+				Account.addToApp("Clinic Medical Assistant");
 				loopPrompt(in);
 			} else  if (west.equalsIgnoreCase("B")) {
 				System.out.println("Congratulations you have officially applied for the Computer Support Technician role!");
+				Account.addToApp("Computer Support Technician");
 				loopPrompt(in);
 			} else  if (west.equalsIgnoreCase("C")) {
 				System.out.println("Congratulations you have officially applied for the General Sales Manager role!");
+				Account.addToApp("General Sales Manager");
 				loopPrompt(in);
 			} else if (west.equalsIgnoreCase("D")) {
-				System.out.println("Congratulations you have officially applied for the Supervisory Mechanical Engineer  role!");
+				System.out.println("Congratulations you have officially applied for the Supervisory Mechanical Engineer role!");
+				Account.addToApp("Supervisory Mechanical Engineer");
 				loopPrompt(in);
 			} else {
 				JobsRUs.jobSelection(in);
@@ -107,15 +112,19 @@ public class Location extends CSVWriter {
 		
 	 		if (midwest.equalsIgnoreCase("A")) {
 	 			System.out.println("Congratulations you have officially applied for the Electrical Engineer - Entry Level role!");
+	 			Account.addToApp("Electrical Engineer - Entry Level");
 	 			loopPrompt(in);
 	 		} else  if (midwest.equalsIgnoreCase("B")) {
 	 			System.out.println("Congratulations you have officially applied for the Financial Analyst role!");
+	 			Account.addToApp("Financial Analyst");
 	 			loopPrompt(in);
 	 		} else  if (midwest.equalsIgnoreCase("C")) {
 	 			System.out.println("Congratulations you have officially applied for the Senior Software Engineer role!");
+	 			Account.addToApp("Senior Software Engineer");
 	 			loopPrompt(in);
 	 		} else if (midwest.equalsIgnoreCase("D")) {
-	 			System.out.println("Congratulations you have officially applied for the Used Truck Sales Representativ role!");
+	 			System.out.println("Congratulations you have officially applied for the Used Truck Sales Representative role!");
+	 			Account.addToApp("Used Truck Sales Representative");
 	 			loopPrompt(in);
 	 		} else {
 	 			JobsRUs.jobSelection(in);
@@ -148,12 +157,15 @@ public class Location extends CSVWriter {
 		
 	 		if (southwest.equalsIgnoreCase("A")) {
 	 			System.out.println("Congratulations you have officially applied for the Community Health Worker role!");
+	 			Account.addToApp("Community Health Worker");
 	 			loopPrompt(in);
 	 		} else  if (southwest.equalsIgnoreCase("B")) {
 	 			System.out.println("Congratulations you have officially applied for the Deposit Support Specialist role!");
+	 			Account.addToApp("Deposit Support Specialist");
 	 			loopPrompt(in);
 	 		} else  if (southwest.equalsIgnoreCase("C")) {
 	 			System.out.println("Congratulations you have officially applied for the Physical Therapist role!");
+	 			Account.addToApp("Physical Therapist");
 	 			loopPrompt(in);
 	 		} else {
 	 			JobsRUs.jobSelection(in);
@@ -187,15 +199,19 @@ public class Location extends CSVWriter {
 		
 	 		if (southeast.equalsIgnoreCase("A")) {
 	 			System.out.println("Congratulations you have officially applied for the Entry Level Solar Sales Representative role!");
+	 			Account.addToApp("Entry Level Solar Sales Representative");
 	 			loopPrompt(in);
 	 		} else  if (southeast.equalsIgnoreCase("B")) {
 	 			System.out.println("Congratulations you have officially applied for the Finance Director role!");
+	 			Account.addToApp("Finance Director");
 	 			loopPrompt(in);
 	 		} else  if (southeast.equalsIgnoreCase("C")) {
 	 			System.out.println("Congratulations you have officially applied for the Network Engineer - 1 role!");
+	 			Account.addToApp("Network Engineer - 1");
 	 			loopPrompt(in);
 	 		} else if (southeast.equalsIgnoreCase("D")) {
 	 			System.out.println("Congratulations you have officially applied for the Psychiatric Nurse Practitioner role!");
+	 			Account.addToApp("Psychiatric Nurse Practitioner");
 	 			loopPrompt(in);
 	 		} else {
 	 			JobsRUs.jobSelection(in);
@@ -231,18 +247,23 @@ public class Location extends CSVWriter {
 		
 	 		if (northeast.equalsIgnoreCase("A")) {
 	 			System.out.println("Congratulations you have officially applied for the Automotive Sales Consultant role!");
+	 			Account.addToApp("Automotive Sales Consultant");
 	 			loopPrompt(in);
 	 		} else  if (northeast.equalsIgnoreCase("B")) {
 	 			System.out.println("Congratulations you have officially applied for the Desktop Support Technician role!");
+	 			Account.addToApp("Desktop Support Techician");
 	 			loopPrompt(in);
 	 		} else  if (northeast.equalsIgnoreCase("C")) {
 	 			System.out.println("Congratulations you have officially applied for the Financial Compliance Manager role!");
+	 			Account.addToApp("Financial Compliance Manager");
 	 			loopPrompt(in);
 	 		} else  if (northeast.equalsIgnoreCase("D")) {
 	 			System.out.println("Congratulations you have officially applied for the Machine Learning Engineer role!");
+	 			Account.addToApp("Machine Learning Engineer");
 	 			loopPrompt(in);
 	 		}else if (northeast.equalsIgnoreCase("E")) {
 	 			System.out.println("Congratulations you have officially applied for the Nuclear Engineer - Mid Level role!");
+	 			Account.addToApp("Nuclear Engineer - Mid Level");
 	 			loopPrompt(in);
 	 		} else {
 	 			JobsRUs.jobSelection(in);
