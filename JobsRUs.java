@@ -8,7 +8,7 @@ import com.skillstorm.beans.Jobs;
 import com.skillstorm.beans.Location;
 import com.skillstorm.beans.PayRange;
 
-public class JobsRUs extends Jobs {
+public class JobsRUs {
 	
 	private static boolean signIn;
 	static ArrayList<Account> a = new ArrayList<>();
