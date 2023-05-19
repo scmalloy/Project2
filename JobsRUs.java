@@ -1,4 +1,4 @@
-package com.skillstorm.project;
+package com.skillstorm;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -70,7 +70,6 @@ public class JobsRUs {
 		}	
 	}
 	
-	
 	public static void createAccount(Scanner in) {
 		
 		System.out.println("Welcome lets create your account");
@@ -85,7 +84,6 @@ public class JobsRUs {
 		System.out.println("\nPlease enter your name.");
 		String name = in.nextLine(); 
 		account.setName(name);
-		//System.out.println("\nWELCOME!: " + name );
 		
 		System.out.println("\nPlease enter a valid email address");
 		String email = in.nextLine();
@@ -148,8 +146,8 @@ public class JobsRUs {
 			choice = in.nextLine();
 		} while (!choice.equalsIgnoreCase("Y") && !choice.equalsIgnoreCase("N"));
 			if(choice.equalsIgnoreCase("Y")) {
+				setSignIn(true);
 				menu(in);
-				signIn = true;
 			} else {
 			String edit;
 			do {
@@ -197,15 +195,14 @@ public class JobsRUs {
 				} while (!choice1.equalsIgnoreCase("Y") && !choice1.equalsIgnoreCase("N"));
 			
 				if(choice.equalsIgnoreCase("Y")) {
+					setSignIn(true);
 					menu(in);
-					signIn = true;
 				} else {
 					editor(in);
 				}
 			}
 		}
 	}
-	
 	
 	public static void jobSelection(Scanner in) {
 		String selectionType;
@@ -225,18 +222,18 @@ public class JobsRUs {
 	
 		if (selectionType.equalsIgnoreCase("A")) {
 			Jobs job = new Jobs();
-			job.allJobs();
+			job.allJobs(in);
 		} else  if (selectionType.equalsIgnoreCase("B")) {
 			PayRange pay = new PayRange();
-			pay.payRange();
+			pay.payRange(in);
 		} else  if (selectionType.equalsIgnoreCase("C")) {
 			Location loc = new Location();
-			loc.location();
+			loc.location(in);
 		} else {
 			Field field = new Field();
-			field.field();
+			field.field(in);
 		}
-	}	
+	}
 	public static boolean isSignIn() {
 		return signIn;
 	}
