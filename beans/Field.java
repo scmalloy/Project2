@@ -24,7 +24,7 @@ public class Field extends CSVWriter {
 					+ "\nE. Healthcare");
 			jobType = in.nextLine();
 			
-			System.out.println("---------------------------------{ processing........ }---------------------------------\n");
+			System.out.println("--------------------------------- { processing........ } ---------------------------------\n");
 		} while (!jobType.equalsIgnoreCase("A") && !jobType.equalsIgnoreCase("B") 
 				&& !jobType.equalsIgnoreCase("C") && !jobType.equalsIgnoreCase("D") && !jobType.equalsIgnoreCase("E"));
 		
@@ -55,11 +55,10 @@ public class Field extends CSVWriter {
 			 String eng;
 			 do {
 				 System.out.println("\nPlease choose A, B, C, or D for the Engineering job you would like to apply to: "
-						 		  + "\n\nA. Supervisory Mechanical Engineer"); 
-				System.out.println("B. Network Engineer - 1"); 
-				System.out.println("C. Electrical Engineer - Entry Level"); 
-				System.out.println("D. Nuclear Engineer - Mid Level"); 
-				System.out.println("E. Return to the Job Selection homescreen"); 
+						 		  + "\n\nA. Supervisory Mechanical Engineer"
+						 		  + "\nC. Electrical Engineer - Entry Level"
+						 		  + "\nD. Nuclear Engineer - Mid Level"
+						 		  + "\nE. Return to the Job Selection homescreen"); 
 				eng = in.nextLine();
 				
 			} while (!eng.equalsIgnoreCase("A") && !eng.equalsIgnoreCase("B") 
@@ -82,8 +81,7 @@ public class Field extends CSVWriter {
 			}
 		 } else {
 				JobsRUs.jobSelection(in);
-			}
-
+		}
 	}
 	
 	
@@ -99,11 +97,11 @@ public class Field extends CSVWriter {
 		 String sales;
 			do {
 				System.out.println("\nPlease choose A, B, C, or D the Sales job you would like to apply to: "
-								 + "\n\nA. Automotive Sales Consultant"); 
-				System.out.println("B. General Sales Manager");
-				System.out.println("C. Used Truck Sales Representative");
-				System.out.println("D. Entry Level Solar Sales Representative"); 
-				System.out.println("E. Return to the Job Selection homescreen"); 
+								 + "\n\nA. Automotive Sales Consultant"
+								 + "\nB. General Sales Manager"
+								 + "\nC. Used Truck Sales Representative"
+								 + "\nD. Entry Level Solar Sales Representative" 
+								 + "\nE. Return to the Job Selection homescreen"); 
 				sales = in.nextLine();
 				
 			} while (!sales.equalsIgnoreCase("A") && !sales.equalsIgnoreCase("B") 
@@ -126,7 +124,7 @@ public class Field extends CSVWriter {
 			}
 		 } else {
 				JobsRUs.jobSelection(in);
-			}
+		}
 	}
 	
 	
@@ -142,11 +140,11 @@ public class Field extends CSVWriter {
 		 String fin;
 			do {
 				System.out.println("\nPlease choose A, B, C, or D the Finance job you would like to apply to: "
-								 + "\n\nA. Finance Director"); 
-				System.out.println("B. Financial Analyst");
-				System.out.println("C. Financial Compliance Manager"); 
-				System.out.println("D. Deposit Support Specialist"); 
-				System.out.println("E. Return to the Job Selection homescreen"); 
+								 + "\n\nA. Finance Director" 
+								 + "\nB. Financial Analyst"
+								 + "\nC. Financial Compliance Manager"
+								 + "\nD. Deposit Support Specialist" 
+								 + "\nE. Return to the Job Selection homescreen");
 				fin = in.nextLine();
 				
 			} while (!fin.equalsIgnoreCase("A") && !fin.equalsIgnoreCase("B") 
@@ -169,7 +167,7 @@ public class Field extends CSVWriter {
 			}
 		 } else {
 				JobsRUs.jobSelection(in);
-			}
+		}
 	}
 	
 	
@@ -185,11 +183,11 @@ public class Field extends CSVWriter {
 		 String compIT;
 			do {
 				System.out.println("\nPlease choose A, B, C, or D the Computer and Information Technology job you would like to apply to: "
-								 + "\n\nA. Senior Software Engineer"); 
-				System.out.println("B. Computer Support Technician"); 
-				System.out.println("C. Machine Learning Engineer"); 
-				System.out.println("D. Desktop Support Technician"); 
-				System.out.println("E. Return to the Job Selection homescreen"); 
+								 + "\n\nA. Senior Software Engineer"
+								 + "\nB. Computer Support Technician"
+								 + "\nC. Machine Learning Engineer" 
+								 + "\nD. Desktop Support Technician"
+								 + "\nE. Return to the Job Selection homescreen"); 
 				compIT = in.nextLine();
 				
 			} while (!compIT.equalsIgnoreCase("A") && !compIT.equalsIgnoreCase("B") 
@@ -212,7 +210,7 @@ public class Field extends CSVWriter {
 			}
 		 } else {
 				JobsRUs.jobSelection(in);
-			}
+		}
 	}
 	
 	
@@ -228,11 +226,11 @@ public class Field extends CSVWriter {
 		 String health;
 			do {
 				System.out.println("\nPlease choose A, B, C, or D the Healthcare job you would like to apply to: "
-								 + "\n\nA. Community Health Worker");
-				System.out.println("B. Clinic Medical Assistant");
-				System.out.println("C. Physical Therapist");
-				System.out.println("D. Psychiatric Nurse Practitioner");
-				System.out.println("E. Return to the Job Selection homescreen"); 
+								 + "\n\nA. Community Health Worker"
+								 + "\nB. Clinic Medical Assistant"
+								 + "\nC. Physical Therapist"
+								 + "\nD. Psychiatric Nurse Practitioner"
+								 + "\nE. Return to the Job Selection homescreen"); 
 				health = in.nextLine();
 				
 			} while (!health.equalsIgnoreCase("A") && !health.equalsIgnoreCase("B") 
