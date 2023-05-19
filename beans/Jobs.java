@@ -21,30 +21,31 @@ public class Jobs extends CSVWriter {
 			 do {
 				 System.out.println("Please choose the job you would like to apply to: "
 						 		  + "\n-------------------------- Computer and Information Technology ---------------------------\n"
-						 		  + "\nA. Computer Support Technician"); 
-				 System.out.println("B. Desktop Support Technician"); 
-				 System.out.println("C. Machine Learning Engineer"); 
-				 System.out.println("D. Senior Software Engineer"); 
-				 System.out.println("\n-------------------------------------- Engineering ---------------------------------------\n"
-						 		  + "\nE. Electrical Engineer - Entry Level"); 
-				 System.out.println("F. Network Engineer - 1"); 
-				 System.out.println("G. Nuclear Engineer - Mid Level"); 
-				 System.out.println("H. Supervisory Mechanical Engineer"); 
-				 System.out.println("\n----------------------------------------- Finance ------------------------------------------\n");
-				 System.out.println("I. Deposit Support Specialist"); 
-				 System.out.println("J. Finance Director"); 
-				 System.out.println("K. Financial Analyst"); 
-				 System.out.println("L. Financial Compliance Manager"); 
-				 System.out.println("\n---------------------------------------- Healthcare -----------------------------------------\n");
-				 System.out.println("M. Clinic Medical Assistant");
-				 System.out.println("N. Community Health Worker"); 
-				 System.out.println("O. Physical Therapist"); 
-				 System.out.println("P. Psychiatric Nurse Practitioner"); 
-				 System.out.println("\n--------------------------------------- Sales ---------------------------------------\n");
-				 System.out.println("Q. Automotive Sales Consultant"); 
-				 System.out.println("R. Entry Level Solar Sales Representative"); 
-				 System.out.println("S. General Sales Manager"); 
-				 System.out.println("T. Used Truck Sales Representative");	
+						 		  + "\nA. Computer Support Technician"
+						 		  + "\nB. Desktop Support Technician"
+						 		  + "\nC. Machine Learning Engineer"
+						 		  + "\nD. Senior Software Engineer" 
+						 		  + "\n-------------------------------------- Engineering ---------------------------------------\n"
+						 		  + "\nE. Electrical Engineer - Entry Level"
+						 		  + "\nF. Network Engineer - 1"
+						 		  + "\nG. Nuclear Engineer - Mid Level"
+						 		  + "\nH. Supervisory Mechanical Engineer" 
+						 		  + "\n----------------------------------------- Finance ------------------------------------------\n"
+						 		  + "\nI. Deposit Support Specialist"
+						 		  + "\nJ. Finance Director"
+						 		  + "\nK. Financial Analyst" 
+						 		  + "\nL. Financial Compliance Manager"
+						 		  + "\n---------------------------------------- Healthcare -----------------------------------------\n"
+						 		  + "\nM. Clinic Medical Assistant"
+						 		  + "\nN. Community Health Worker" 
+						 		  + "\nO. Physical Therapist"
+						 		  + "\nP. Psychiatric Nurse Practitioner"
+						 		  + "\n--------------------------------------- Sales ---------------------------------------\n"
+						 		  + "\nQ. Automotive Sales Consultant"
+						 		  + "\nR. Entry Level Solar Sales Representative" 
+						 		  + "\nS. General Sales Manager" 
+						 		  + "\nT. Used Truck Sales Representative"
+						 		  + "\nU. Return to Job Selection homescreen");
 				 alljobslist = in.nextLine();
 				
 				 System.out.println("---------------------------------{ processing........ }---------------------------------\n");
@@ -54,7 +55,7 @@ public class Jobs extends CSVWriter {
 				   && !alljobslist.equalsIgnoreCase("J") && !alljobslist.equalsIgnoreCase("K") && !alljobslist.equalsIgnoreCase("L")
 				   && !alljobslist.equalsIgnoreCase("M") && !alljobslist.equalsIgnoreCase("N") && !alljobslist.equalsIgnoreCase("O")
 				   && !alljobslist.equalsIgnoreCase("P") && !alljobslist.equalsIgnoreCase("Q") && !alljobslist.equalsIgnoreCase("R")
-				   && !alljobslist.equalsIgnoreCase("S") && !alljobslist.equalsIgnoreCase("T"));
+				   && !alljobslist.equalsIgnoreCase("S") && !alljobslist.equalsIgnoreCase("T") && !alljobslist.equalsIgnoreCase("U"));
 		
 			 if (alljobslist.equalsIgnoreCase("A")) {
 				 System.out.println("Congratulations you have officially applied for the Computer Support Technician role!");
@@ -113,9 +114,11 @@ public class Jobs extends CSVWriter {
 			 } else if (alljobslist.equalsIgnoreCase("S")) {
 				 System.out.println("Congratulations you have officially applied for the General Sales Manager role!");
 				 loopPrompt(in);
-			 } else {
+			 } else if (alljobslist.equalsIgnoreCase("T")) {
 				 System.out.println("Congratulations you have officially applied for the Used Truck Sales Representative role!");
 				 loopPrompt(in);
+			 } else {
+				 JobsRUs.jobSelection(in);
 			 }
 		 } else {
 				JobsRUs.jobSelection(in);
