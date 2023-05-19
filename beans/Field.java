@@ -9,8 +9,6 @@ import com.skillstorm.JobsRUs;
 
 public class Field extends CSVWriter{
 	
-	// ****** FIX THE SCANNER *****
-	
 	public void field(Scanner in) {
 		
 		
@@ -86,57 +84,160 @@ public class Field extends CSVWriter{
 	
 	
 	public void sales(Scanner in) {
+		System.out.println("------------------------------------ Sales -------------------------------------\n");
 		 try {
 	           List<String[]> csvData = readCSV("C:\\Users\\sarah\\Downloads\\jobListings\\jobListingSales.csv");
 	           formatAsTable(csvData);
 	       } catch (IOException e) {
 	           System.err.println("An error occurred: " + e.getMessage());
 	       }
+		 String sales;
+			do {
+				System.out.println("\nPlease choose A, B, C, or D the Sales job you would like to apply to: "
+					+ "\n\nA. Automotive Sales Consultant"); 
+					System.out.println("B. General Sales Manager");
+					System.out.println("C. Used Truck Sales Representative");
+					System.out.println("D. Entry Level Solar Sales Representative"); 
+					System.out.println("E. Return to the Job Selection homescreen"); 
+				sales = in.nextLine();
+				
+			} while (!sales.equalsIgnoreCase("A") && !sales.equalsIgnoreCase("B") 
+					&& !sales.equalsIgnoreCase("C") && !sales.equalsIgnoreCase("D") && !sales.equalsIgnoreCase("E"));
+			
+			if (sales.equalsIgnoreCase("A")) {
+				System.out.println("Congratulations you have officially applied for the Automotive Sales Consultant role!");
+				loopPrompt(in);
+			} else  if (sales.equalsIgnoreCase("B")) {
+				System.out.println("Congratulations you have officially applied for the General Sales Manager role!");
+				loopPrompt(in);
+			} else  if (sales.equalsIgnoreCase("C")) {
+				System.out.println("Congratulations you have officially applied for the Used Truck Sales Representative role!");
+				loopPrompt(in);
+			} else if (sales.equalsIgnoreCase("D")){
+				System.out.println("Congratulations you have officially applied for the Entry Level Solar Sales Representative role!");
+				loopPrompt(in);
+			} else {
+				JobsRUs.jobSelection(in);
+				
+			}
 	}
 	
 	
 	public void finance(Scanner in) {
+		System.out.println("------------------------------------- Finance -------------------------------------\n");
 		 try {
 	           List<String[]> csvData = readCSV("C:\\Users\\sarah\\Downloads\\jobListings\\jobListingFinance.csv");
 	           formatAsTable(csvData);
 	       } catch (IOException e) {
 	           System.err.println("An error occurred: " + e.getMessage());
 	       }
+		 String fin;
+			do {
+				System.out.println("\nPlease choose A, B, C, or D the Finance job you would like to apply to: "
+					+ "\n\nA. Finance Director"); 
+					System.out.println("B. Financial Analyst");
+					System.out.println("C. Financial Compliance Manager"); 
+					System.out.println("D. Deposit Support Specialist"); 
+					System.out.println("E. Return to the Job Selection homescreen"); 
+				fin = in.nextLine();
+				
+			} while (!fin.equalsIgnoreCase("A") && !fin.equalsIgnoreCase("B") 
+					&& !fin.equalsIgnoreCase("C") && !fin.equalsIgnoreCase("D") && !fin.equalsIgnoreCase("E"));
+			
+			if (fin.equalsIgnoreCase("A")) {
+				System.out.println("Congratulations you have officially applied for the Finance Director role!");
+				loopPrompt(in);
+			} else  if (fin.equalsIgnoreCase("B")) {
+				System.out.println("Congratulations you have officially applied for the Financial Analyst role!");
+				loopPrompt(in);
+			} else  if (fin.equalsIgnoreCase("C")) {
+				System.out.println("Congratulations you have officially applied for the Financial Compliance Manager role!");
+				loopPrompt(in);
+			} else if (fin.equalsIgnoreCase("D")) {
+				System.out.println("Congratulations you have officially applied for the Deposit Support Specialist role!");
+				loopPrompt(in);
+			} else {
+				JobsRUs.jobSelection(in);
+			}
 	}
 	
 	
 	public void computerIT(Scanner in) {
+		System.out.println("------------------------------------- Computer and Information Technology -------------------------------------\n");
 		 try {
 	           List<String[]> csvData = readCSV("C:\\Users\\sarah\\Downloads\\jobListings\\jobListingComputerIT.csv");
 	           formatAsTable(csvData);
 	       } catch (IOException e) {
 	           System.err.println("An error occurred: " + e.getMessage());
 	       }
+		 String compIT;
+			do {
+				System.out.println("\nPlease choose A, B, C, or D the Computer and Information Technology job you would like to apply to: "
+					+ "\n\nA. Senior Software Engineer"); 
+					System.out.println("B. Computer Support Technician"); 
+					System.out.println("C. Machine Learning Engineer"); 
+					System.out.println("D. Desktop Support Technician"); 
+					System.out.println("E. Return to the Job Selection homescreen"); 
+				compIT = in.nextLine();
+				
+			} while (!compIT.equalsIgnoreCase("A") && !compIT.equalsIgnoreCase("B") 
+					&& !compIT.equalsIgnoreCase("C") && !compIT.equalsIgnoreCase("D") && !compIT.equalsIgnoreCase("E"));
+			
+			if (compIT.equalsIgnoreCase("A")) {
+				System.out.println("Congratulations you have officially applied for the Senior Software Engineer role!");
+				loopPrompt(in);
+			} else  if (compIT.equalsIgnoreCase("B")) {
+				System.out.println("Congratulations you have officially applied for the Computer Support Technician role!");
+				loopPrompt(in);
+			} else  if (compIT.equalsIgnoreCase("C")) {
+				System.out.println("Congratulations you have officially applied for the Machine Learning Engineer role!");
+				loopPrompt(in);
+			} else  if (compIT.equalsIgnoreCase("D")) {
+				System.out.println("Congratulations you have officially applied for the Desktop Support Technician role!");
+				loopPrompt(in);
+			} else {
+				JobsRUs.jobSelection(in);
+			}
 	}
 	
 	
 	public void healthcare(Scanner in) {
+		System.out.println("------------------------------------- Healthcare -------------------------------------\n");
 		 try {
 	           List<String[]> csvData = readCSV("C:\\Users\\sarah\\Downloads\\jobListings\\jobListingHealthcare.csv");
 	           formatAsTable(csvData);
 	       } catch (IOException e) {
 	           System.err.println("An error occurred: " + e.getMessage());
 	       }
+		 String health;
+			do {
+				System.out.println("\nPlease choose A, B, C, or D the Healthcare job you would like to apply to: "
+					+ "\n\nA. Community Health Worker");
+					System.out.println("B. Clinic Medical Assistant");
+					System.out.println("C. Physical Therapist");
+					System.out.println("D. Psychiatric Nurse Practitioner");
+					System.out.println("E. Return to the Job Selection homescreen"); 
+				health = in.nextLine();
+				
+			} while (!health.equalsIgnoreCase("A") && !health.equalsIgnoreCase("B") 
+					&& !health.equalsIgnoreCase("C") && !health.equalsIgnoreCase("D") && !health.equalsIgnoreCase("E"));
+			
+			if (health.equalsIgnoreCase("A")) {
+				System.out.println("Congratulations you have officially applied for the Community Health Worker role!");
+				loopPrompt(in);
+			} else  if (health.equalsIgnoreCase("B")) {
+				System.out.println("Congratulations you have officially applied for the Clinic Medical Assistant role!");
+				loopPrompt(in);
+			} else  if (health.equalsIgnoreCase("C")) {
+				System.out.println("Congratulations you have officially applied for the Physical Therapist role!");
+				loopPrompt(in);
+			} else if (health.equalsIgnoreCase("D")) {
+				System.out.println("Congratulations you have officially applied for the Psychiatric Nurse Practitioner role!");
+				loopPrompt(in);
+			} else {
+				JobsRUs.jobSelection(in);
+			}
 	}
 	
-	public void loopPrompt(Scanner in) {
-		
-		String yesorno;
-		do {
-			System.out.println("\nWould you like to apply to another job?"
-				+ "\nChoose Y to return to the Job Selection screen or N to end your session.");
-			yesorno = in.nextLine();
-		} while (!yesorno.equalsIgnoreCase("Y") && !yesorno.equalsIgnoreCase("N"));
-	
-		if(yesorno.equalsIgnoreCase("Y")) {
-			JobsRUs.jobSelection(in);
-		} else {
-			System.out.println("This concludes your job application!");
-		}
-	}
+
 }
