@@ -53,11 +53,11 @@ public class Location extends CSVWriter {
 			String west;
 			do {
 				System.out.println("\nPlease choose A, B, C, or D for the job you would like to apply to: "
-							     + "\n\nA. Clinic Medical Assistant"); 
-				System.out.println("B. Computer Support Technician"); 
-				System.out.println("C. General Sales Manager"); 
-				System.out.println("D. Supervisory Mechanical Engineer");
-				System.out.println("E. Return to the Job Selection homescreen"); 
+							     + "\n\nA. Clinic Medical Assistant"
+							     + "\nB. Computer Support Technician"
+							     + "\nC. General Sales Manager"
+							     + "\nD. Supervisory Mechanical Engineer"
+							     + "\nE. Return to the Job Selection homescreen"); 
 				west = in.nextLine();
 			
 			} while (!west.equalsIgnoreCase("A") && !west.equalsIgnoreCase("B") 
@@ -95,11 +95,11 @@ public class Location extends CSVWriter {
 	 		String midwest;
 	 		do {
 	 			System.out.println("\nPlease choose A, B, C, or D for the job you would like to apply to: "
-	 							 + "\n\nA. Electrical Engineer - Entry Level"); 
-				System.out.println("B. Financial Analyst"); 
-				System.out.println("C. Senior Software Engineer"); 
-				System.out.println("D. Used Truck Sales Representativ");
-				System.out.println("E. Return to the Job Selection homescreen"); 
+	 							 + "\n\nA. Electrical Engineer - Entry Level"
+	 							 + "\nB. Financial Analyst"
+	 							 + "\nC. Senior Software Engineer" 
+	 							 + "\nD. Used Truck Sales Representativ"
+	 							 + "\nE. Return to the Job Selection homescreen"); 
 				midwest = in.nextLine();
 			
 	 		} while (!midwest.equalsIgnoreCase("A") && !midwest.equalsIgnoreCase("B") 
@@ -137,10 +137,10 @@ public class Location extends CSVWriter {
 	 		String southwest;
 	 		do {
 	 			System.out.println("\nPlease choose A, B, or C for the job you would like to apply to: "
-	 							 + "\n\nA. Community Health Worker"); 
-				System.out.println("B. Deposit Support Specialist"); 
-				System.out.println("C. Physical Therapist"); 
-				System.out.println("D. Return to the Job Selection homescreen"); 
+	 							 + "\n\nA. Community Health Worker" 
+	 							 + "\nB. Deposit Support Specialist"
+	 							 + "\nC. Physical Therapist"
+	 							 + "\nD. Return to the Job Selection homescreen"); 
 				southwest = in.nextLine();
 			
 	 		} while (!southwest.equalsIgnoreCase("A") && !southwest.equalsIgnoreCase("B") 
@@ -175,11 +175,11 @@ public class Location extends CSVWriter {
 	 		String southeast;
 	 		do {
 	 			System.out.println("\nPlease choose A, B, C, or D for the job you would like to apply to: "
-	 							 + "\n\nA. Entry Level Solar Sales Representative"); 
-				System.out.println("B. Finance Director"); 
-				System.out.println("C. Network Engineer - 1"); 
-				System.out.println("D. Psychiatric Nurse Practitioner");
-				System.out.println("E. Return to the Job Selection homescreen"); 
+	 							 + "\n\nA. Entry Level Solar Sales Representative"
+	 							 + "\nB. Finance Director"
+	 							 + "\nC. Network Engineer - 1" 
+	 							 + "\nD. Psychiatric Nurse Practitioner"
+	 							 + "\nE. Return to the Job Selection homescreen"); 
 				southeast = in.nextLine();
 			
 	 		} while (!southeast.equalsIgnoreCase("A") && !southeast.equalsIgnoreCase("B") 
@@ -217,12 +217,12 @@ public class Location extends CSVWriter {
 	 		String northeast;
 	 		do {
 	 			System.out.println("\nPlease choose A, B, C, D, or E for the job you would like to apply to: "
-	 							 + "\n\nA. Automotive Sales Consultant");
-				System.out.println("B. Desktop Support Technician");
-				System.out.println("C. Financial Compliance Manager"); 
-				System.out.println("D. Machine Learning Engineer"); 
-				System.out.println("E. Nuclear Engineer - Mid Level");
-				System.out.println("F. Return to the Job Selection homescreen"); 
+	 							 + "\n\nA. Automotive Sales Consultant"
+	 							 + "\nB. Desktop Support Technician"
+	 							 + "\nC. Financial Compliance Manager"
+	 							 + "\nD. Machine Learning Engineer" 
+	 							 + "\nE. Nuclear Engineer - Mid Level"
+	 							 + "\nF. Return to the Job Selection homescreen"); 
 				northeast = in.nextLine();
 			
 	 		} while (!northeast.equalsIgnoreCase("A") && !northeast.equalsIgnoreCase("B") 
