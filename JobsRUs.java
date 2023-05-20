@@ -211,12 +211,14 @@ public class JobsRUs {
 					+ "\nA. All jobs"
 					+ "\nB. By pay range"
 					+ "\nC. By location"
-					+ "\nD. By job field");
+					+ "\nD. By job field"
+					+ "\nE. Return to main menu");
 				selectionType = in.nextLine();
 		
 			System.out.println("\n----------------------------- { processing........ } -----------------------------\n");
 		} while (!selectionType.equalsIgnoreCase("A") && !selectionType.equalsIgnoreCase("B") 
-				&& !selectionType.equalsIgnoreCase("C") && !selectionType.equalsIgnoreCase("D"));
+			  && !selectionType.equalsIgnoreCase("C") && !selectionType.equalsIgnoreCase("D")
+			  && !selectionType.equalsIgnoreCase("E"));
 	
 		if (selectionType.equalsIgnoreCase("A")) {
 			Jobs job = new Jobs();
@@ -227,9 +229,15 @@ public class JobsRUs {
 		} else  if (selectionType.equalsIgnoreCase("C")) {
 			Location loc = new Location();
 			loc.location(in);
-		} else {
+		} else if (selectionType.equalsIgnoreCase("D")) {
 			Field field = new Field();
 			field.field(in);
+		} else {
+			if (signIn == false) {
+				initialMenu(in);
+			} else {
+				menu(in);
+			}
 		}
 	}
 	public static boolean isSignIn() {
