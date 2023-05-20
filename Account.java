@@ -12,10 +12,10 @@ public class Account {
 	
 	public Account() {}
 
-	public Account(String name, String userID, String password, String email, String phone) {
-		this.name = name;
-		this.userID = userID;
+	public Account(String username, String password, String name, String email, String phone) {
+		this.username = username;
 		this.password = password;
+		this.name = name;
 		this.email = email;
 		this.phone = phone;
 	}
