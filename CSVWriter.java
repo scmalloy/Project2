@@ -197,7 +197,7 @@ public class CSVWriter extends JobsRUs {
 	        return columnWidths;
 	    }
 	
-	    public static String login(String username, String password) {
+	   	    public static String login(String username, String password) {
 	        String csvFile = "C:\\User\\Users.csv";
 	        String line;
 	        String[] headers = null;
@@ -212,8 +212,12 @@ public class CSVWriter extends JobsRUs {
 	                    int usernameIndex = getIndex(headers, "Username");
 	                    int passwordIndex = getIndex(headers, "Password");
 	                    int nameIndex = getIndex(headers, "Name");
+	                    int emailIndex = getIndex(headers, "Email");
+	                    int phoneIndex = getIndex(headers, "Phone");
 	                    if (usernameIndex != -1 && passwordIndex != -1 && nameIndex != -1) {
 	                        if (data[usernameIndex].equals(username) && data[passwordIndex].equals(password)) {
+	                        	JobsRUs.account = new Account(data[usernameIndex], data[passwordIndex], data[nameIndex], 
+	                        								  data[emailIndex], data[phoneIndex]);
 	                            return data[nameIndex];
 	                        }
 	                    }
@@ -224,7 +228,6 @@ public class CSVWriter extends JobsRUs {
 	        }
 	        return null;
 	    }
-
 
 	    public static int getIndex(String[] array, String value) {
 	        for (int i = 0; i < array.length; i++) {
