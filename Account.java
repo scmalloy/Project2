@@ -1,4 +1,4 @@
-package com.skillstorm.project;
+package com.skillstorm;
 
 import java.util.ArrayList;
 
