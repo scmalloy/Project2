@@ -1,4 +1,4 @@
-package com.skillstorm.project;
+package com.skillstorm;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -119,7 +119,7 @@ public class CSVWriter extends JobsRUs {
 					+ "\nLocation: " + location
 					+ "\nPay Range: " + payrange);
 			String check;
-			do {
+			do { 
 				System.out.println("\nIs that correct? "
 						  		 + "\nPlease enter Y/N: \n");
 				check = in.nextLine();
@@ -145,7 +145,7 @@ public class CSVWriter extends JobsRUs {
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(file, true));
 				for(Account a : account) {
-					bw.write(a.getName() + "," + a.getUserID() + "," + a.getPassword()
+					bw.write(a.getUsername() + "," + a.getPassword() + "," + a.getName()
 						   + "," + a.getEmail() + "," + a.getPhone() + "\n");
 					bw.newLine();
 					bw.close();
@@ -202,7 +202,7 @@ public class CSVWriter extends JobsRUs {
 	        String line;
 	        String[] headers = null;
 	        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-	            line = br.readLine(); // Read the header line
+	            line = br.readLine();
 	            if (line != null) {
 	                headers = line.split(",");
 	            }
@@ -234,21 +234,21 @@ public class CSVWriter extends JobsRUs {
 	        }
 	        return -1;
 	    }
-	
+	    
 	public void loopPrompt(Scanner in) {
 			
-			String yesorno;
-			do {
-				System.out.println("\nWould you like to apply to another job?"
-					+ "\nChoose Y to return to the Job Selection homescreen or N to end your session.");
-				yesorno = in.nextLine();
-			} while (!yesorno.equalsIgnoreCase("Y") && !yesorno.equalsIgnoreCase("N"));
+		String yesorno;
+		do {
+			System.out.println("\nWould you like to apply to another job?"
+							 + "\nChoose Y to return to the Job Selection homescreen or N to return to main menu.");
+			yesorno = in.nextLine();
+		} while (!yesorno.equalsIgnoreCase("Y") && !yesorno.equalsIgnoreCase("N"));
 		
-			if(yesorno.equalsIgnoreCase("Y")) {
-				JobsRUs.jobSelection(in);
-			} else {
-				System.out.println("This concludes your job application!");
-			}
+		if(yesorno.equalsIgnoreCase("Y")) {
+			JobsRUs.jobSelection(in);
+		} else {
+			System.out.println("This concludes your job application!");
+			JobsRUs.menu(in);
 		}
-		
+	}
 }	
