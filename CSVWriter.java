@@ -197,6 +197,44 @@ public class CSVWriter extends JobsRUs {
 	        return columnWidths;
 	    }
 	
+	    public static String login(String username, String password) {
+	        String csvFile = "C:\\User\\Users.csv";
+	        String line;
+	        String[] headers = null;
+	        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+	            line = br.readLine(); // Read the header line
+	            if (line != null) {
+	                headers = line.split(",");
+	            }
+	            while ((line = br.readLine()) != null) {
+	                String[] data = line.split(",");
+	                if (data.length == headers.length) {
+	                    int usernameIndex = getIndex(headers, "Username");
+	                    int passwordIndex = getIndex(headers, "Password");
+	                    int nameIndex = getIndex(headers, "Name");
+	                    if (usernameIndex != -1 && passwordIndex != -1 && nameIndex != -1) {
+	                        if (data[usernameIndex].equals(username) && data[passwordIndex].equals(password)) {
+	                            return data[nameIndex];
+	                        }
+	                    }
+	                }
+	            }
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	        return null;
+	    }
+
+
+	    public static int getIndex(String[] array, String value) {
+	        for (int i = 0; i < array.length; i++) {
+	            if (array[i].equals(value)) {
+	                return i;
+	            }
+	        }
+	        return -1;
+	    }
+	
 	public void loopPrompt(Scanner in) {
 			
 			String yesorno;
