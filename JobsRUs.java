@@ -51,7 +51,7 @@ public class JobsRUs {
 		String choice;  
 		do { System.out.println("\nA. View Jobs" 
 	        				  + "\nB. Create Resume"
-	        				  + "\nC. Edit Account" 
+	        				  + "\nC. View Account" 
 	        				  + "\nD. Quit");
 		
 		choice = in.nextLine();
@@ -64,18 +64,40 @@ public class JobsRUs {
 			CSVWriter.writeResume(in);
 			menu(in);
 		} else if (choice.equalsIgnoreCase("C")) {
-			editor(in);
+			viewAccount(in);
 		} else {
 			System.out.println("Have a great day! \nGoodbye!");
 		}	
 	}
 	
+	public static void viewAccount(Scanner in) {
+		
+		System.out.println("\nUser ID: " + account.getUsername() 
+						 + "\nName: " + account.getName() 
+						 + "\nEmail: " + account.getEmail() 
+						 + "\nPhone Number: " + account.getPhone()
+						 + "\nJob Applications: " + account.getApplications().toString());
+		String view;
+		do {
+			System.out.println("\nWould you like to edit your account or return to the main menu?"
+							 + "\nA. Edit Account"
+							 + "\nB. Return To Main Menu");
+			view = in.nextLine();
+		} while (!view.equalsIgnoreCase("A") && !view.equalsIgnoreCase("B"));
+		
+		if (view.equalsIgnoreCase("A")) {
+			editor(in);
+		} else {
+			menu(in);
+		}
+	}
+	
 	public static void createAccount(Scanner in) {
 		
 		System.out.println("Welcome lets create your account");
-		System.out.println("\nPlease pick a user ID");
-		String id = in.nextLine();
-		account.setUsername(id);
+		System.out.println("\nPlease pick a username");
+		String username = in.nextLine();
+		account.setUsername(username);
 		
 		System.out.println("\nPlease pick a password");
 		String password = in.nextLine();
@@ -93,7 +115,7 @@ public class JobsRUs {
 		String phone = in.nextLine();
 		account.setPhone(phone);
 
-		a.add(new Account(name, id, email, phone, password));
+		a.add(new Account(username, password, name, email, phone));
 		CSVWriter.csvFileWriter(a, "C:\\User\\Users.csv");
 		
 		editor(in);
@@ -119,16 +141,17 @@ public class JobsRUs {
             System.out.println("Invalid username or password.");
             String sign;
             do {
-		System.out.println("\nTry again or create an account."
-				 + "\nA. Try Again"
-				 + "\nB. Create Account");
-		sign = in.nextLine();
-	   } while(!sign.equalsIgnoreCase("A") && !sign.equalsIgnoreCase("B"));
-		if (sign.equalsIgnoreCase("A")) {
-			signIn(in);
-		} else {
-			createAccount(in);
-		}
+				System.out.println("\nTry again or create an account."
+								 + "\nA. Try Again"
+								 + "\nB. Create Account");
+				sign = in.nextLine();
+			} while(!sign.equalsIgnoreCase("A") && !sign.equalsIgnoreCase("B"));
+			if (sign.equalsIgnoreCase("A")) {
+				signIn(in);
+			} else {
+				createAccount(in);
+			}
+        }
 	}
 	
 	public static void editor(Scanner in) {
